@@ -2,11 +2,43 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blue — Hotel Guest Experience Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a1628" />
+
+  <title>Blue — Digital Guest Experience Platform for Hotels & Resorts | MENA</title>
+  <meta name="description" content="Blue is the digital operating layer for modern hotels and resorts. Streamline guest requests, boost service revenue, and elevate guest experience across 20+ hospitality services — in any language." />
+  <meta name="keywords" content="hotel guest experience platform, hospitality SaaS, digital concierge, hotel operations, room service app, multilingual guest chat, MENA hospitality technology, hotel management software" />
+  <meta name="author" content="Blue Hotel Experience" />
+  <link rel="canonical" href="/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Blue" />
+  <meta property="og:title" content="Blue — The Digital Operating Layer for Modern Hotels" />
+  <meta property="og:description" content="Connect guests, staff, requests and services in one premium platform. Built for hotels and resorts across the MENA region." />
+  <meta property="og:url" content="/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blue — Digital Guest Experience Platform for Hotels" />
+  <meta name="twitter:description" content="Modernize guest experience, streamline operations, and grow service revenue. One platform. Every guest request." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Blue",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "description": "Digital Guest Experience Platform for hotels and resorts. Manage 20+ guest services from one unified, multilingual platform.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
   <style>
     /* ── RESET & ROOT ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,13 +57,14 @@
       --white-dim:   rgba(245,242,238,0.7);
       --glass:       rgba(255,255,255,0.04);
       --glass-border:rgba(255,255,255,0.08);
+      --whatsapp:    #25d366;
 
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body:    'DM Sans', sans-serif;
       --font-arabic:  'Noto Naskh Arabic', serif;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
       background: var(--blue-deep);
@@ -40,6 +73,7 @@
       font-weight: 300;
       line-height: 1.7;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* Arabic mode */
@@ -52,678 +86,747 @@
     }
 
     /* ── CANVAS BG ── */
-    #bg-canvas {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-    }
+    #bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 
     /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 1.4rem 4rem;
       transition: background 0.4s;
     }
     nav.scrolled {
       background: rgba(10,22,40,0.92);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--glass-border);
     }
 
     .nav-logo {
       font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: var(--white);
+      font-size: 1.8rem; font-weight: 600;
+      letter-spacing: 0.12em; color: var(--white);
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
     }
     .nav-logo span.dot {
-      display: inline-block;
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--aqua);
-      margin-bottom: 2px;
+      display: inline-block; width: 7px; height: 7px;
+      border-radius: 50%; background: var(--aqua); margin-bottom: 2px;
     }
 
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      list-style: none;
+      display: flex; align-items: center; gap: 2.2rem; list-style: none;
     }
     .nav-links a {
-      color: var(--white-dim);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.25s;
+      color: var(--white-dim); text-decoration: none;
+      font-size: 0.82rem; letter-spacing: 0.08em;
+      text-transform: uppercase; transition: color 0.25s;
     }
     .nav-links a:hover { color: var(--white); }
 
+    .nav-right { display: flex; align-items: center; gap: 0.8rem; }
+
+    .nav-cta {
+      background: var(--gold); color: var(--blue-deep);
+      padding: 0.55rem 1.1rem; border-radius: 0.3rem;
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      transition: all 0.3s;
+    }
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
     .lang-toggle {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      cursor: pointer;
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      border-radius: 2rem;
-      padding: 0.35rem 0.9rem;
-      color: var(--white-dim);
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-      transition: all 0.25s;
+      display: flex; align-items: center; gap: 0.4rem; cursor: pointer;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: 2rem; padding: 0.35rem 0.9rem;
+      color: var(--white-dim); font-size: 0.8rem;
+      letter-spacing: 0.05em; transition: all 0.25s;
     }
     .lang-toggle:hover { background: rgba(255,255,255,0.08); color: var(--white); }
 
+    .mobile-toggle {
+      display: none; background: var(--glass); border: 1px solid var(--glass-border);
+      width: 38px; height: 38px; border-radius: 0.4rem; cursor: pointer;
+      align-items: center; justify-content: center;
+    }
+    .mobile-toggle span {
+      display: block; width: 16px; height: 1.5px; background: var(--white);
+      position: relative;
+    }
+    .mobile-toggle span::before, .mobile-toggle span::after {
+      content: ''; position: absolute; left: 0; width: 16px; height: 1.5px;
+      background: var(--white);
+    }
+    .mobile-toggle span::before { top: -5px; }
+    .mobile-toggle span::after { top: 5px; }
+
     /* ── HERO ── */
     #hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 8rem 2rem 4rem;
-      z-index: 1;
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 8rem 2rem 5rem; z-index: 1;
     }
 
     .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--aqua);
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.3s forwards;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--aqua); margin-bottom: 1.8rem;
+      opacity: 0; animation: fadeUp 0.9s 0.3s forwards;
     }
     .hero-eyebrow::before, .hero-eyebrow::after {
-      content: '';
-      display: block;
-      width: 28px; height: 1px;
-      background: var(--aqua);
-      opacity: 0.5;
+      content: ''; display: block; width: 28px; height: 1px;
+      background: var(--aqua); opacity: 0.5;
     }
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(3.5rem, 9vw, 8rem);
-      font-weight: 300;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      color: var(--white);
-      margin-bottom: 0.3rem;
-      opacity: 0;
-      animation: fadeUp 1s 0.5s forwards;
+      font-size: clamp(2.8rem, 8vw, 7rem);
+      font-weight: 300; line-height: 1.05;
+      letter-spacing: -0.01em; color: var(--white);
+      margin-bottom: 1.2rem; max-width: 18ch;
+      opacity: 0; animation: fadeUp 1s 0.5s forwards;
     }
-    body.ar .hero-title { font-family: var(--font-arabic); font-size: clamp(2.8rem, 7vw, 6rem); }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--aqua);
-    }
+    body.ar .hero-title { font-family: var(--font-arabic); font-size: clamp(2.4rem, 7vw, 5.5rem); }
+    .hero-title em { font-style: italic; color: var(--aqua); }
 
     .hero-subtitle {
       font-family: var(--font-display);
-      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--white-dim);
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 1s 0.7s forwards;
+      font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+      font-weight: 300; font-style: italic;
+      color: var(--white-dim); margin-bottom: 2rem; max-width: 42ch;
+      opacity: 0; animation: fadeUp 1s 0.7s forwards;
     }
     body.ar .hero-subtitle { font-family: var(--font-arabic); font-style: normal; }
 
     .hero-desc {
-      max-width: 52ch;
-      font-size: 1rem;
-      color: var(--white-dim);
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: fadeUp 1s 0.9s forwards;
+      max-width: 56ch; font-size: 1rem; color: var(--white-dim);
+      margin-bottom: 2.5rem; opacity: 0; animation: fadeUp 1s 0.9s forwards;
     }
 
     .hero-cta {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 1s 1.1s forwards;
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 3rem; opacity: 0; animation: fadeUp 1s 1.1s forwards;
     }
 
     .btn-primary {
-      background: var(--gold);
-      color: var(--blue-deep);
-      padding: 0.9rem 2.4rem;
-      border-radius: 0.3rem;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: inline-block;
+      background: var(--gold); color: var(--blue-deep);
+      padding: 1rem 2.4rem; border-radius: 0.3rem;
+      font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.3s; display: inline-block;
     }
     .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
+      background: var(--gold-light); transform: translateY(-2px);
       box-shadow: 0 8px 32px rgba(201,168,76,0.25);
     }
 
     .btn-ghost {
-      background: transparent;
-      color: var(--white);
-      padding: 0.9rem 2.4rem;
-      border-radius: 0.3rem;
-      font-size: 0.85rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid var(--glass-border);
-      cursor: pointer;
-      transition: all 0.3s;
-      display: inline-block;
+      background: transparent; color: var(--white);
+      padding: 1rem 2.4rem; border-radius: 0.3rem;
+      font-size: 0.85rem; font-weight: 400;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; border: 1px solid var(--glass-border);
+      cursor: pointer; transition: all 0.3s; display: inline-block;
     }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: var(--glass); transform: translateY(-2px); }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.3); background: var(--glass);
+      transform: translateY(-2px);
+    }
+
+    .hero-trust {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 1.2rem 2.4rem; font-size: 0.78rem; color: var(--white-dim);
+      letter-spacing: 0.06em; max-width: 720px;
+      opacity: 0; animation: fadeUp 1s 1.3s forwards;
+    }
+    .hero-trust span {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .hero-trust span::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--aqua); opacity: 0.8;
+    }
 
     .hero-scroll-hint {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
+      position: absolute; bottom: 1.5rem; left: 50%;
       transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--white-dim);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      opacity: 0;
-      animation: fadeIn 1s 1.8s forwards;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      color: var(--white-dim); font-size: 0.7rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      opacity: 0; animation: fadeIn 1s 1.8s forwards;
     }
     .scroll-line {
-      width: 1px;
-      height: 40px;
+      width: 1px; height: 40px;
       background: linear-gradient(to bottom, var(--aqua), transparent);
       animation: scrollPulse 2s 2s infinite;
     }
 
-    /* ── PROBLEM ── */
-    #problem {
-      position: relative;
-      z-index: 1;
-      padding: 8rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    /* ── SHARED SECTION ── */
+    .section { position: relative; z-index: 1; padding: 7rem 2rem; }
+    .section-wide { max-width: 1200px; margin: 0 auto; }
+    .section-narrow { max-width: 1100px; margin: 0 auto; }
 
     .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--aqua);
-      margin-bottom: 1rem;
+      font-size: 0.7rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem;
     }
-
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 300; line-height: 1.2; margin-bottom: 1.2rem;
     }
     body.ar .section-title { font-family: var(--font-arabic); }
+    .section-lede {
+      max-width: 56ch; font-size: 1rem; color: var(--white-dim);
+    }
+    .section-header { text-align: center; margin-bottom: 4.5rem; }
+    .section-header .section-lede { margin: 0 auto; }
 
+    /* ── PROBLEM ── */
     .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5px;
-      margin-top: 4rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5px; margin-top: 4rem;
       background: var(--glass-border);
       border: 1px solid var(--glass-border);
-      border-radius: 0.5rem;
-      overflow: hidden;
+      border-radius: 0.5rem; overflow: hidden;
     }
-
     .pain-item {
-      background: var(--glass);
-      padding: 2.5rem 2rem;
+      background: var(--blue-deep); padding: 2.5rem 2rem;
       transition: background 0.3s;
     }
-    .pain-item:hover { background: rgba(255,255,255,0.06); }
-
-    .pain-icon {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
+    .pain-item:hover { background: var(--blue-mid); }
+    .pain-icon { font-size: 1.5rem; margin-bottom: 1rem; }
     .pain-title {
       font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 0.5rem;
+      font-size: 1.2rem; font-weight: 400;
+      color: var(--white); margin-bottom: 0.5rem;
     }
     body.ar .pain-title { font-family: var(--font-arabic); }
-
-    .pain-text {
-      font-size: 0.9rem;
-      color: var(--white-dim);
-      line-height: 1.6;
-    }
+    .pain-text { font-size: 0.9rem; color: var(--white-dim); line-height: 1.6; }
 
     /* ── WHAT IS BLUE ── */
     #what {
-      position: relative;
-      z-index: 1;
-      padding: 8rem 2rem;
       background: linear-gradient(to bottom, transparent, rgba(13,34,64,0.6), transparent);
     }
-
     .what-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+      align-items: center; max-width: 1100px; margin: 0 auto;
     }
-
     .what-visual {
-      position: relative;
-      aspect-ratio: 4/5;
-      border: 1px solid var(--glass-border);
-      border-radius: 1rem;
-      overflow: hidden;
-      background: var(--glass);
+      position: relative; aspect-ratio: 4/5;
+      border: 1px solid var(--glass-border); border-radius: 1rem;
+      overflow: hidden; background: var(--glass);
+      animation: float 6s ease-in-out infinite;
     }
-
-    /* Animated phone mockup */
     .phone-screen {
-      position: absolute;
-      inset: 10%;
+      position: absolute; inset: 10%;
       background: linear-gradient(160deg, #0d2240, #0a3060);
       border-radius: 0.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      padding: 1.2rem 0.8rem;
-      overflow: hidden;
+      display: flex; flex-direction: column; gap: 0.6rem;
+      padding: 1.2rem 0.8rem; overflow: hidden;
     }
-
     .phone-bar {
-      height: 3px;
-      border-radius: 2px;
-      background: var(--glass-border);
-      animation: shimmer 2.5s infinite;
+      height: 3px; border-radius: 2px;
+      background: var(--glass-border); animation: shimmer 2.5s infinite;
     }
     .phone-bar.wide { width: 80%; }
     .phone-bar.medium { width: 55%; animation-delay: 0.3s; }
     .phone-bar.short { width: 35%; animation-delay: 0.6s; }
     .phone-bar.aqua { background: var(--aqua); opacity: 0.5; }
     .phone-bar.gold { background: var(--gold); opacity: 0.4; animation-delay: 1s; }
-
     .phone-card {
       background: rgba(255,255,255,0.05);
       border: 1px solid var(--glass-border);
-      border-radius: 0.4rem;
-      padding: 0.7rem;
-      margin-top: 0.5rem;
+      border-radius: 0.4rem; padding: 0.7rem; margin-top: 0.5rem;
     }
-
-    .phone-dot-row {
-      display: flex;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-    }
-    .phone-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-    }
+    .phone-dot-row { display: flex; gap: 0.4rem; margin-top: 0.5rem; }
+    .phone-dot { width: 8px; height: 8px; border-radius: 50%; }
     .phone-dot.aqua { background: var(--aqua); opacity: 0.7; }
     .phone-dot.gold { background: var(--gold); opacity: 0.6; }
     .phone-dot.dim { background: rgba(255,255,255,0.15); }
 
-    .what-content .section-title { margin-bottom: 2rem; }
-
+    .what-content .section-title { margin-bottom: 1.5rem; }
     .what-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
+      list-style: none; display: flex; flex-direction: column; gap: 1.1rem;
     }
-
     .what-list li {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.95rem;
-      color: var(--white-dim);
-      align-items: flex-start;
+      display: flex; gap: 1rem; font-size: 0.95rem;
+      color: var(--white-dim); align-items: flex-start;
     }
     body.ar .what-list li { flex-direction: row-reverse; text-align: right; }
-
     .what-list li::before {
-      content: '';
-      display: block;
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--aqua);
-      margin-top: 0.55rem;
+      content: ''; display: block; width: 5px; height: 5px;
+      border-radius: 50%; background: var(--aqua);
+      margin-top: 0.55rem; flex-shrink: 0;
+    }
+
+    /* ── PRODUCT PREVIEW ── */
+    #preview {
+      padding: 7rem 2rem;
+      background: linear-gradient(to bottom, transparent, rgba(13,34,64,0.4), transparent);
+    }
+    .preview-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 4rem;
+    }
+    .preview-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 1rem; padding: 1.6rem;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      transition: all 0.4s; cursor: default;
+      display: flex; flex-direction: column; gap: 1.2rem;
+    }
+    .preview-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(126,203,207,0.3);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+    .preview-mock {
+      position: relative; aspect-ratio: 16/11;
+      background: linear-gradient(160deg, #0d2240, #0a1d38);
+      border: 1px solid var(--glass-border);
+      border-radius: 0.7rem; overflow: hidden; padding: 0.9rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .mock-status {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.6rem; color: var(--white-dim); letter-spacing: 0.1em;
+    }
+    .mock-status .dots { display: flex; gap: 3px; }
+    .mock-status .dots i {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--white-dim); opacity: 0.4;
+    }
+    .mock-row {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.45rem 0.55rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--glass-border);
+      border-radius: 0.35rem;
+    }
+    .mock-avatar {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--aqua), var(--blue-glow));
       flex-shrink: 0;
     }
-    body.ar .what-list li::before { margin-left: 0; }
+    .mock-avatar.gold { background: linear-gradient(135deg, var(--gold), var(--gold-light)); }
+    .mock-line { height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12); flex: 1; }
+    .mock-line.short { max-width: 40%; }
+    .mock-line.aqua { background: var(--aqua); opacity: 0.55; }
+    .mock-pill {
+      font-size: 0.55rem; padding: 2px 8px; border-radius: 999px;
+      background: rgba(126,203,207,0.15); color: var(--aqua);
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .mock-pill.gold { background: rgba(201,168,76,0.18); color: var(--gold-light); }
+
+    /* Variant mocks */
+    .mock-tile {
+      flex: 1; background: rgba(255,255,255,0.04);
+      border: 1px solid var(--glass-border); border-radius: 0.35rem;
+      padding: 0.5rem; display: flex; flex-direction: column; gap: 0.3rem;
+      min-height: 38px;
+    }
+    .mock-bubble {
+      max-width: 75%; padding: 0.4rem 0.6rem;
+      border-radius: 0.6rem; display: flex; gap: 0.3rem;
+      font-size: 0.55rem; align-items: center;
+    }
+    .mock-bubble.in { background: rgba(255,255,255,0.06); align-self: flex-start; }
+    .mock-bubble.out { background: rgba(126,203,207,0.18); align-self: flex-end; }
+    body.ar .mock-bubble.in { align-self: flex-end; }
+    body.ar .mock-bubble.out { align-self: flex-start; }
+    .mock-bar {
+      height: 6px; border-radius: 3px;
+      background: linear-gradient(90deg, var(--aqua), var(--blue-glow));
+      width: 65%;
+    }
+    .mock-kpi {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      padding: 0.5rem 0.6rem; background: rgba(255,255,255,0.03);
+      border: 1px solid var(--glass-border); border-radius: 0.35rem;
+    }
+    .mock-kpi strong {
+      font-family: var(--font-display); font-size: 1.1rem;
+      color: var(--white); font-weight: 400;
+    }
+    .mock-kpi span { font-size: 0.55rem; color: var(--white-dim); letter-spacing: 0.08em; }
+
+    .preview-meta { display: flex; flex-direction: column; gap: 0.4rem; }
+    .preview-tag {
+      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--aqua);
+    }
+    .preview-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem; font-weight: 400; color: var(--white);
+    }
+    body.ar .preview-title { font-family: var(--font-arabic); }
+    .preview-text { font-size: 0.86rem; color: var(--white-dim); line-height: 1.6; }
 
     /* ── FEATURES ── */
-    #features {
-      position: relative;
-      z-index: 1;
-      padding: 8rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .features-header {
-      text-align: center;
-      margin-bottom: 5rem;
-    }
-
     .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1px;
       background: var(--glass-border);
       border: 1px solid var(--glass-border);
-      border-radius: 0.8rem;
-      overflow: hidden;
+      border-radius: 0.8rem; overflow: hidden;
     }
-
     .feature-card {
-      background: var(--blue-deep);
-      padding: 2.5rem 2rem;
-      position: relative;
-      transition: background 0.3s;
-      cursor: default;
+      background: var(--blue-deep); padding: 2.5rem 2rem;
+      position: relative; transition: background 0.3s;
     }
     .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
       background: linear-gradient(to right, transparent, var(--aqua), transparent);
-      opacity: 0;
-      transition: opacity 0.4s;
+      opacity: 0; transition: opacity 0.4s;
     }
     .feature-card:hover { background: var(--blue-mid); }
     .feature-card:hover::before { opacity: 1; }
-
     .feature-num {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 300;
-      color: rgba(126,203,207,0.15);
-      line-height: 1;
-      margin-bottom: 0.8rem;
+      font-family: var(--font-display); font-size: 2.5rem; font-weight: 300;
+      color: rgba(126,203,207,0.15); line-height: 1; margin-bottom: 0.8rem;
     }
-
     .feature-icon { font-size: 1.5rem; margin-bottom: 0.8rem; }
-
     .feature-title {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 0.6rem;
+      font-family: var(--font-display); font-size: 1.25rem;
+      font-weight: 400; color: var(--white); margin-bottom: 0.6rem;
     }
     body.ar .feature-title { font-family: var(--font-arabic); font-size: 1.1rem; }
+    .feature-text { font-size: 0.88rem; color: var(--white-dim); line-height: 1.65; }
 
-    .feature-text {
-      font-size: 0.88rem;
-      color: var(--white-dim);
-      line-height: 1.65;
+    /* ── BUSINESS VALUE / KPI ── */
+    #value {
+      background: linear-gradient(to bottom, transparent, rgba(13,34,64,0.5), transparent);
+    }
+    .kpi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem; margin-top: 4rem;
+    }
+    .kpi-card {
+      position: relative;
+      background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      border: 1px solid var(--glass-border);
+      border-radius: 0.9rem; padding: 2.2rem 1.8rem;
+      transition: all 0.35s; overflow: hidden;
+    }
+    .kpi-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at top right, rgba(126,203,207,0.12), transparent 60%);
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .kpi-card:hover { transform: translateY(-4px); border-color: rgba(126,203,207,0.3); }
+    .kpi-card:hover::after { opacity: 1; }
+    .kpi-value {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 3.6rem); font-weight: 300;
+      color: var(--white); line-height: 1; margin-bottom: 0.4rem;
+      display: flex; align-items: baseline; gap: 0.25rem;
+    }
+    .kpi-value span.unit { font-size: 1.2rem; color: var(--aqua); }
+    .kpi-label {
+      font-family: var(--font-display); font-size: 1.1rem;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    body.ar .kpi-label { font-family: var(--font-arabic); }
+    .kpi-text { font-size: 0.85rem; color: var(--white-dim); line-height: 1.6; }
+
+    /* ── MULTILINGUAL ── */
+    #multilingual { padding: 7rem 2rem; }
+    .multi-inner {
+      max-width: 1150px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: center;
+    }
+    .multi-content .section-title { margin-bottom: 1.5rem; }
+    .multi-points {
+      list-style: none; display: flex; flex-direction: column; gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .multi-points li {
+      display: flex; gap: 0.9rem; font-size: 0.93rem; color: var(--white-dim);
+      align-items: flex-start; line-height: 1.6;
+    }
+    body.ar .multi-points li { flex-direction: row-reverse; text-align: right; }
+    .multi-check {
+      flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(126,203,207,0.15); color: var(--aqua);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; margin-top: 0.15rem;
+    }
+
+    .translate-demo {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: 1rem; padding: 1.8rem;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      display: flex; flex-direction: column; gap: 0.9rem;
+      position: relative;
+    }
+    .translate-row {
+      display: flex; gap: 0.8rem; align-items: flex-start;
+    }
+    .translate-row.right { flex-direction: row-reverse; }
+    .translate-bubble {
+      flex: 1; padding: 0.8rem 1rem; border-radius: 0.7rem;
+      font-size: 0.85rem;
+    }
+    .translate-bubble.guest {
+      background: rgba(126,203,207,0.12);
+      border: 1px solid rgba(126,203,207,0.2);
+      color: var(--white);
+    }
+    .translate-bubble.staff {
+      background: rgba(201,168,76,0.10);
+      border: 1px solid rgba(201,168,76,0.18);
+      color: var(--white);
+    }
+    .translate-meta {
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--white-dim); margin-bottom: 0.3rem; display: flex; gap: 0.4rem;
+    }
+    .translate-flag { font-size: 0.85rem; }
+    .translate-original {
+      font-family: var(--font-arabic); direction: rtl; font-size: 0.95rem;
+      color: var(--white); margin-bottom: 0.3rem;
+    }
+    .translate-translation {
+      font-size: 0.78rem; color: var(--aqua); font-style: italic;
+      padding-top: 0.4rem; border-top: 1px dashed rgba(126,203,207,0.2);
+    }
+    .translate-pill {
+      align-self: center; font-size: 0.65rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--aqua);
+      padding: 0.3rem 0.8rem; background: rgba(126,203,207,0.1);
+      border-radius: 999px; border: 1px solid rgba(126,203,207,0.2);
+    }
+
+    /* ── SERVICE ECOSYSTEM ── */
+    #ecosystem {
+      background: linear-gradient(to bottom, transparent, rgba(13,34,64,0.5), transparent);
+    }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem; margin-top: 4rem;
+    }
+    .service-tile {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: 0.7rem; padding: 1.6rem 1.2rem;
+      display: flex; flex-direction: column; gap: 0.6rem;
+      transition: all 0.3s; text-align: center;
+      align-items: center;
+    }
+    .service-tile:hover {
+      transform: translateY(-4px); border-color: rgba(126,203,207,0.35);
+      background: rgba(126,203,207,0.04);
+    }
+    .service-icon {
+      font-size: 1.6rem; margin-bottom: 0.3rem;
+    }
+    .service-name {
+      font-family: var(--font-display); font-size: 1rem;
+      color: var(--white); font-weight: 400;
+    }
+    body.ar .service-name { font-family: var(--font-arabic); }
+
+    .ecosystem-banner {
+      margin-top: 3rem; padding: 3rem 2rem; text-align: center;
+      border: 1px solid var(--glass-border); border-radius: 1rem;
+      background: linear-gradient(135deg, rgba(126,203,207,0.06), rgba(201,168,76,0.04));
+    }
+    .ecosystem-banner h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 300;
+      color: var(--white); line-height: 1.2;
+    }
+    body.ar .ecosystem-banner h3 { font-family: var(--font-arabic); }
+    .ecosystem-banner h3 em { color: var(--gold); font-style: normal; font-weight: 400; }
+    .ecosystem-banner p {
+      color: var(--white-dim); margin-top: 1rem;
+      max-width: 50ch; margin-left: auto; margin-right: auto;
     }
 
     /* ── FOR WHOM ── */
     #audience {
-      position: relative;
-      z-index: 1;
-      padding: 8rem 2rem;
-      text-align: center;
-      background: linear-gradient(to bottom, transparent, rgba(13,34,64,0.5), transparent);
+      padding: 7rem 2rem; text-align: center;
     }
-
-    .audience-inner { max-width: 900px; margin: 0 auto; }
-
+    .audience-inner { max-width: 1000px; margin: 0 auto; }
     .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 4rem;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 4rem;
     }
-
     .audience-card {
-      border: 1px solid var(--glass-border);
-      border-radius: 0.8rem;
-      padding: 2.5rem 1.5rem;
-      background: var(--glass);
+      border: 1px solid var(--glass-border); border-radius: 0.8rem;
+      padding: 2.5rem 1.5rem; background: var(--glass);
       transition: all 0.35s;
     }
     .audience-card:hover {
-      border-color: rgba(126,203,207,0.3);
-      transform: translateY(-4px);
+      border-color: rgba(126,203,207,0.3); transform: translateY(-4px);
       box-shadow: 0 16px 48px rgba(0,0,0,0.3);
     }
-
     .audience-icon { font-size: 2rem; margin-bottom: 1rem; }
-
     .audience-title {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      color: var(--white);
-      margin-bottom: 0.6rem;
+      font-family: var(--font-display); font-size: 1.2rem;
+      color: var(--white); margin-bottom: 0.6rem;
     }
     body.ar .audience-title { font-family: var(--font-arabic); }
-
     .audience-text { font-size: 0.88rem; color: var(--white-dim); }
+
+    /* ── TRUST / DESIGNED FOR ── */
+    #trust { padding: 6rem 2rem; }
+    .trust-inner {
+      max-width: 1100px; margin: 0 auto; text-align: center;
+    }
+    .trust-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5px; margin-top: 3.5rem;
+      background: var(--glass-border);
+      border: 1px solid var(--glass-border);
+      border-radius: 0.8rem; overflow: hidden;
+    }
+    .trust-cell {
+      background: var(--blue-deep); padding: 2.2rem 1rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      transition: background 0.3s;
+    }
+    .trust-cell:hover { background: var(--blue-mid); }
+    .trust-icon { font-size: 1.6rem; opacity: 0.85; }
+    .trust-label {
+      font-family: var(--font-display); font-size: 1rem;
+      color: var(--white); font-weight: 400;
+    }
+    body.ar .trust-label { font-family: var(--font-arabic); }
+    .trust-sub { font-size: 0.75rem; color: var(--white-dim); letter-spacing: 0.06em; }
 
     /* ── DEMO FORM ── */
     #demo {
-      position: relative;
-      z-index: 1;
-      padding: 8rem 2rem;
+      padding: 7rem 2rem;
+      background: linear-gradient(to bottom, transparent, rgba(13,34,64,0.5));
     }
-
-    .demo-inner {
-      max-width: 680px;
-      margin: 0 auto;
+    .demo-inner { max-width: 720px; margin: 0 auto; }
+    .demo-header { text-align: center; margin-bottom: 3rem; }
+    .demo-perks {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 1rem 1.6rem; margin-top: 1.5rem;
+      font-size: 0.8rem; color: var(--white-dim);
     }
-
-    .demo-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
+    .demo-perks span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .demo-perks span::before {
+      content: '✓'; color: var(--aqua); font-size: 0.85rem;
     }
-
     .form-wrap {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      border-radius: 1rem;
-      padding: 3rem;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: 1rem; padding: 3rem;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     }
-
     .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin-bottom: 1.2rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.2rem; margin-bottom: 1.2rem;
     }
-
     .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
       margin-bottom: 1.2rem;
     }
-
     .form-group.full { grid-column: 1 / -1; }
-
     label {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--white-dim);
+      font-size: 0.74rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--white-dim);
     }
     body.ar label { letter-spacing: 0; }
-
     input, select, textarea {
       background: rgba(255,255,255,0.04);
       border: 1px solid var(--glass-border);
-      border-radius: 0.4rem;
-      padding: 0.85rem 1rem;
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      width: 100%;
+      border-radius: 0.4rem; padding: 0.95rem 1rem;
+      color: var(--white); font-family: var(--font-body);
+      font-size: 0.95rem; width: 100%;
       transition: border-color 0.25s, background 0.25s;
-      outline: none;
-      -webkit-appearance: none;
+      outline: none; -webkit-appearance: none;
     }
     body.ar input, body.ar select, body.ar textarea {
-      font-family: var(--font-arabic);
-      text-align: right;
+      font-family: var(--font-arabic); text-align: right;
     }
-
     input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.25); }
     input:focus, select:focus, textarea:focus {
-      border-color: rgba(126,203,207,0.5);
-      background: rgba(255,255,255,0.07);
+      border-color: rgba(126,203,207,0.5); background: rgba(255,255,255,0.07);
     }
-
     select option { background: var(--blue-mid); }
-
     textarea { resize: vertical; min-height: 100px; }
 
     .form-submit {
-      width: 100%;
-      padding: 1rem;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      margin-top: 0.5rem;
+      width: 100%; padding: 1.1rem; font-size: 0.9rem;
+      letter-spacing: 0.1em; margin-top: 0.5rem;
     }
-
     .form-note {
-      text-align: center;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-      margin-top: 1.2rem;
+      text-align: center; font-size: 0.78rem;
+      color: rgba(255,255,255,0.4); margin-top: 1.2rem;
     }
-
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
+    .form-success { display: none; text-align: center; padding: 3rem 1rem; }
     .form-success.show { display: block; }
-    .form-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .form-success-icon { font-size: 3rem; margin-bottom: 1rem; color: var(--gold); }
     .form-success h3 {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 300;
-      margin-bottom: 0.8rem;
+      font-family: var(--font-display); font-size: 1.8rem;
+      font-weight: 300; margin-bottom: 0.8rem;
     }
     body.ar .form-success h3 { font-family: var(--font-arabic); }
     .form-success p { color: var(--white-dim); font-size: 0.95rem; }
 
     /* ── CONTACT ── */
-    #contact {
-      position: relative;
-      z-index: 1;
-      padding: 5rem 2rem;
-      text-align: center;
-    }
-
-    .contact-inner {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
+    #contact { padding: 5rem 2rem; text-align: center; }
+    .contact-inner { max-width: 900px; margin: 0 auto; }
     .contact-bar {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-      margin-top: 3rem;
-      padding: 2.5rem;
-      border: 1px solid var(--glass-border);
-      border-radius: 0.8rem;
-      background: var(--glass);
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem; margin-top: 3rem;
     }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
+    .contact-card {
+      padding: 2rem 1.5rem; border: 1px solid var(--glass-border);
+      border-radius: 0.8rem; background: var(--glass);
+      display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+      transition: all 0.3s; text-decoration: none;
     }
-
+    .contact-card:hover {
+      border-color: rgba(126,203,207,0.3); transform: translateY(-3px);
+      background: rgba(255,255,255,0.05);
+    }
+    .contact-card.whatsapp:hover { border-color: var(--whatsapp); }
+    .contact-icon { font-size: 1.5rem; }
     .contact-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--aqua);
+      font-size: 0.7rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--aqua);
+    }
+    .contact-value {
+      font-size: 0.95rem; color: var(--white);
+      text-decoration: none; direction: ltr;
     }
 
-    .contact-value {
-      font-size: 0.95rem;
-      color: var(--white);
-      text-decoration: none;
-      transition: color 0.25s;
-      direction: ltr;
+    /* ── WHATSAPP FLOATING ── */
+    .wa-float {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 99;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--whatsapp);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 28px rgba(37,211,102,0.4);
+      text-decoration: none; color: white;
+      transition: transform 0.3s;
+      animation: pulseRing 2.5s infinite;
     }
-    .contact-value:hover { color: var(--aqua); }
+    body.ar .wa-float { right: auto; left: 1.5rem; }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
 
     /* ── FOOTER ── */
     footer {
-      position: relative;
-      z-index: 1;
-      padding: 3rem 2rem;
-      border-top: 1px solid var(--glass-border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
+      position: relative; z-index: 1;
+      padding: 3rem 2rem; border-top: 1px solid var(--glass-border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
     }
-
     .footer-brand {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: var(--white);
-      letter-spacing: 0.1em;
+      font-family: var(--font-display); font-size: 1.4rem;
+      color: var(--white); letter-spacing: 0.1em;
     }
-
     .footer-tagline { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
 
-    /* ── DIVIDER ── */
     .divider {
       width: 60px; height: 1px;
       background: linear-gradient(to right, transparent, var(--aqua), transparent);
@@ -736,49 +839,76 @@
       to   { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from { opacity: 0; } to { opacity: 1; }
     }
     @keyframes scrollPulse {
       0%, 100% { opacity: 0.5; transform: scaleY(1); }
       50% { opacity: 1; transform: scaleY(1.2); }
     }
     @keyframes shimmer {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.7; }
+      0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; }
     }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
     }
+    @keyframes pulseRing {
+      0% { box-shadow: 0 8px 28px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.5); }
+      70% { box-shadow: 0 8px 28px rgba(37,211,102,0.4), 0 0 0 16px rgba(37,211,102,0); }
+      100% { box-shadow: 0 8px 28px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0); }
+    }
 
     .reveal {
-      opacity: 0;
-      transform: translateY(30px);
+      opacity: 0; transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .what-visual { animation: float 6s ease-in-out infinite; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      nav { padding: 1.2rem 1.5rem; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.3rem; }
       .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .mobile-toggle { display: flex; }
+
+      .nav-links.open {
+        display: flex; position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
+        background: rgba(10,22,40,0.97);
+        backdrop-filter: blur(14px);
+        padding: 1rem 1.3rem 1.5rem;
+        border-bottom: 1px solid var(--glass-border);
+      }
+      .nav-links.open li { padding: 0.85rem 0; border-bottom: 1px solid var(--glass-border); }
+      .nav-links.open li:last-child { border-bottom: none; }
+
+      #hero { padding: 7rem 1.3rem 4rem; }
+      .hero-title { font-size: clamp(2.4rem, 11vw, 4rem); }
+      .hero-trust { font-size: 0.72rem; gap: 0.8rem 1.4rem; }
+
+      .section { padding: 5rem 1.3rem; }
+      #preview, #multilingual, #ecosystem, #audience, #trust, #demo { padding: 5rem 1.3rem; }
 
       .what-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .what-visual { aspect-ratio: 16/9; }
+      .what-visual { aspect-ratio: 16/10; max-width: 420px; margin: 0 auto; }
 
+      .multi-inner { grid-template-columns: 1fr; gap: 3rem; }
       .audience-grid { grid-template-columns: 1fr; }
-
       .form-row { grid-template-columns: 1fr; }
-
+      .form-wrap { padding: 2rem 1.3rem; }
       footer { flex-direction: column; text-align: center; }
 
-      .contact-bar { gap: 2rem; flex-direction: column; }
+      .preview-grid, .kpi-grid, .services-grid { gap: 1rem; }
+      .ecosystem-banner { padding: 2.2rem 1.3rem; }
+      .wa-float { bottom: 1rem; right: 1rem; width: 52px; height: 52px; }
+      body.ar .wa-float { left: 1rem; right: auto; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-cta { flex-direction: column; width: 100%; }
+      .hero-cta a { width: 100%; text-align: center; }
+      .section-title { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -789,37 +919,46 @@
 
   <!-- ── NAVIGATION ── -->
   <nav id="navbar">
-    <a href="#hero" class="nav-logo">
-      BLUE <span class="dot"></span>
-    </a>
-    <ul class="nav-links">
+    <a href="#hero" class="nav-logo">BLUE <span class="dot"></span></a>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#what" data-en="Platform" data-ar="المنصة">Platform</a></li>
-      <li><a href="#features" data-en="Features" data-ar="المميزات">Features</a></li>
+      <li><a href="#preview" data-en="Product" data-ar="المنتج">Product</a></li>
+      <li><a href="#value" data-en="Why Blue" data-ar="لماذا Blue">Why Blue</a></li>
+      <li><a href="#ecosystem" data-en="Services" data-ar="الخدمات">Services</a></li>
       <li><a href="#audience" data-en="For Hotels" data-ar="للفنادق">For Hotels</a></li>
-      <li><a href="#demo" data-en="Request Demo" data-ar="طلب عرض">Request Demo</a></li>
     </ul>
-    <button class="lang-toggle" id="langToggle" onclick="toggleLang()">
-      <span id="langLabel">عربي</span>
-    </button>
+    <div class="nav-right">
+      <a href="#demo" class="nav-cta" data-en="Book a Demo" data-ar="احجز عرضاً">Book a Demo</a>
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()">
+        <span id="langLabel">عربي</span>
+      </button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span></button>
+    </div>
   </nav>
 
   <!-- ── HERO ── -->
   <section id="hero">
     <p class="hero-eyebrow">
-      <span data-en="Hotel Guest Experience" data-ar="تجربة الضيف الفندقية">Hotel Guest Experience</span>
+      <span data-en="Digital Guest Experience Platform" data-ar="منصة تجربة الضيف الرقمية">Digital Guest Experience Platform</span>
     </p>
     <h1 class="hero-title font-display">
-      <span data-en="The <em>invisible</em><br>concierge." data-ar="المرافق الشخصي<br><em>غير المرئي</em>.">The <em>invisible</em><br>concierge.</span>
+      <span data-en="The digital operating layer for <em>modern hotels</em>." data-ar="الطبقة التشغيلية الرقمية <em>للفنادق الحديثة</em>.">The digital operating layer for <em>modern hotels</em>.</span>
     </h1>
     <p class="hero-subtitle">
-      <span data-en="A white-label guest platform for premium hotels." data-ar="منصة ضيافة متكاملة للفنادق الفاخرة.">A white-label guest platform for premium hotels.</span>
+      <span data-en="One platform to modernize guest experience, streamline operations, and grow service revenue." data-ar="منصة واحدة لتحديث تجربة الضيف، تبسيط العمليات، وزيادة إيرادات الخدمات.">One platform to modernize guest experience, streamline operations, and grow service revenue.</span>
     </p>
     <p class="hero-desc">
-      <span data-en="Blue runs quietly alongside your hotel — giving guests complete control of their stay from their phone, in their language, at any hour." data-ar="Blue تعمل بسلاسة جنباً إلى جنب مع فندقك — تمنح ضيوفك التحكم الكامل في إقامتهم من هواتفهم، بلغتهم، في أي وقت.">Blue runs quietly alongside your hotel — giving guests complete control of their stay from their phone, in their language, at any hour.</span>
+      <span data-en="Blue connects guests, staff, and every hotel service in a single multilingual platform — built for hotels and resorts across the MENA region." data-ar="تربط Blue بين الضيوف، الموظفين، وكل خدمات الفندق في منصة متعددة اللغات — مصممة للفنادق والمنتجعات في منطقة الشرق الأوسط وشمال أفريقيا.">Blue connects guests, staff, and every hotel service in a single multilingual platform — built for hotels and resorts across the MENA region.</span>
     </p>
     <div class="hero-cta">
-      <a href="#demo" class="btn-primary" data-en="Request a Demo" data-ar="اطلب عرضاً">Request a Demo</a>
-      <a href="#what" class="btn-ghost" data-en="See How It Works" data-ar="كيف يعمل">See How It Works</a>
+      <a href="#demo" class="btn-primary" data-en="Book a Demo" data-ar="احجز عرضاً">Book a Demo</a>
+      <a href="#preview" class="btn-ghost" data-en="See the Platform" data-ar="استكشف المنصة">See the Platform</a>
+    </div>
+    <div class="hero-trust">
+      <span data-en="Built for Hotels & Resorts" data-ar="مصممة للفنادق والمنتجعات">Built for Hotels & Resorts</span>
+      <span data-en="Multilingual by Design" data-ar="متعددة اللغات بطبيعتها">Multilingual by Design</span>
+      <span data-en="White-Label Branded" data-ar="بعلامتك التجارية">White-Label Branded</span>
+      <span data-en="Works Alongside Your PMS" data-ar="تعمل مع نظامك الحالي">Works Alongside Your PMS</span>
     </div>
     <div class="hero-scroll-hint">
       <div class="scroll-line"></div>
@@ -828,12 +967,13 @@
   </section>
 
   <!-- ── PROBLEM ── -->
-  <section id="problem">
+  <section id="problem" class="section section-narrow">
     <div class="reveal">
       <p class="section-label" data-en="The Problem" data-ar="المشكلة">The Problem</p>
       <h2 class="section-title font-display">
         <span data-en="Hotels still run on phone calls<br>and printed menus." data-ar="الفنادق لا تزال تعمل بالمكالمات الهاتفية<br>والقوائم الورقية.">Hotels still run on phone calls<br>and printed menus.</span>
       </h2>
+      <p class="section-lede" data-en="Guests expect Uber-grade convenience. Hotel operations still rely on switchboards, paper forms, and disconnected departments — losing revenue and goodwill every shift." data-ar="يتوقع الضيوف تجربة بسلاسة تطبيقات اليوم. لكن العمليات الفندقية لا تزال تعتمد على الهاتف، الورق، وأقسام غير مترابطة — تخسر الإيرادات ورضا الضيوف في كل وردية.">Guests expect Uber-grade convenience. Hotel operations still rely on switchboards, paper forms, and disconnected departments — losing revenue and goodwill every shift.</p>
     </div>
     <div class="pain-grid reveal">
       <div class="pain-item">
@@ -852,15 +992,15 @@
         <p class="pain-text" data-en="Guests don't discover services they would have gladly paid for." data-ar="الضيوف لا يكتشفون الخدمات التي كانوا سيدفعون مقابلها بسرور.">Guests don't discover services they would have gladly paid for.</p>
       </div>
       <div class="pain-item">
-        <div class="pain-icon">😶</div>
-        <p class="pain-title" data-en="Low Engagement" data-ar="تفاعل منخفض">Low Engagement</p>
-        <p class="pain-text" data-en="Guests feel passive. Great experiences go unnoticed and unrepeated." data-ar="الضيوف يشعرون بالسلبية. تجارب رائعة تمر دون ملاحظة.">Guests feel passive. Great experiences go unnoticed and unrepeated.</p>
+        <div class="pain-icon">📊</div>
+        <p class="pain-title" data-en="No Operational Visibility" data-ar="غياب الرؤية التشغيلية">No Operational Visibility</p>
+        <p class="pain-text" data-en="Managers fly blind: no live data on requests, response times, or guest satisfaction." data-ar="المدراء بلا رؤية واضحة: لا بيانات حية عن الطلبات، أوقات الاستجابة، أو رضا الضيوف.">Managers fly blind: no live data on requests, response times, or guest satisfaction.</p>
       </div>
     </div>
   </section>
 
   <!-- ── WHAT IS BLUE ── -->
-  <section id="what">
+  <section id="what" class="section">
     <div class="what-inner">
       <div class="what-visual reveal">
         <div class="phone-screen">
@@ -881,15 +1021,9 @@
             <div class="phone-bar medium aqua"></div>
           </div>
           <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
-            <div class="phone-card" style="flex:1;padding:0.5rem;">
-              <div class="phone-dot aqua" style="margin:0 auto;"></div>
-            </div>
-            <div class="phone-card" style="flex:1;padding:0.5rem;">
-              <div class="phone-dot gold" style="margin:0 auto;"></div>
-            </div>
-            <div class="phone-card" style="flex:1;padding:0.5rem;">
-              <div class="phone-dot dim" style="margin:0 auto;"></div>
-            </div>
+            <div class="phone-card" style="flex:1;padding:0.5rem;"><div class="phone-dot aqua" style="margin:0 auto;"></div></div>
+            <div class="phone-card" style="flex:1;padding:0.5rem;"><div class="phone-dot gold" style="margin:0 auto;"></div></div>
+            <div class="phone-card" style="flex:1;padding:0.5rem;"><div class="phone-dot dim" style="margin:0 auto;"></div></div>
           </div>
         </div>
       </div>
@@ -898,63 +1032,290 @@
         <h2 class="section-title font-display">
           <span data-en="Your hotel's digital layer.<br>Already there." data-ar="الطبقة الرقمية لفندقك.<br>جاهزة دائماً.">Your hotel's digital layer.<br>Already there.</span>
         </h2>
+        <p class="section-lede" data-en="Blue connects guests, staff, and every hotel service into one unified system — accessible to guests through their phone, in their language, at any hour." data-ar="تربط Blue بين الضيوف والموظفين وكل خدمات الفندق في نظام موحّد — يصل إليه الضيف من هاتفه، بلغته، في أي وقت.">Blue connects guests, staff, and every hotel service into one unified system — accessible to guests through their phone, in their language, at any hour.</p>
         <div class="divider" style="margin: 1.5rem 0;"></div>
         <ul class="what-list">
-          <li data-en="Sits parallel to your existing PMS — no replacement needed" data-ar="تعمل بجانب نظامك الحالي — لا حاجة لاستبداله">Sits parallel to your existing PMS — no replacement needed</li>
-          <li data-en="White-label: fully branded to your hotel" data-ar="White-label: تحمل هوية فندقك بالكامل">White-label: fully branded to your hotel</li>
-          <li data-en="Guest app + staff operations dashboard, one platform" data-ar="تطبيق الضيوف + لوحة تحكم الموظفين، منصة واحدة">Guest app + staff operations dashboard, one platform</li>
-          <li data-en="Multilingual: auto-translation for guests & staff" data-ar="متعدد اللغات: ترجمة تلقائية للضيوف والموظفين">Multilingual: auto-translation for guests & staff</li>
-          <li data-en="SLA tracking with automatic escalation alerts" data-ar="تتبع مستوى الخدمة مع تنبيهات تصعيد تلقائية">SLA tracking with automatic escalation alerts</li>
-          <li data-en="Built for large hotels and resorts in MENA" data-ar="مصممة للفنادق الكبيرة والمنتجعات في منطقة الشرق الأوسط وأفريقيا">Built for large hotels and resorts in MENA</li>
+          <li data-en="Sits parallel to your existing PMS — no replacement needed" data-ar="تعمل بجانب نظامك الحالي — دون استبدال.">Sits parallel to your existing PMS — no replacement needed</li>
+          <li data-en="White-labeled with your brand, colors and tone" data-ar="بعلامتك التجارية وألوانك وهويتك الكاملة.">White-labeled with your brand, colors and tone</li>
+          <li data-en="Live in weeks, not months — without disrupting operations" data-ar="جاهزة خلال أسابيع، دون تعطيل العمليات.">Live in weeks, not months — without disrupting operations</li>
+          <li data-en="One dashboard for every department, every request, every guest" data-ar="لوحة تحكم واحدة لكل قسم، كل طلب، كل ضيف.">One dashboard for every department, every request, every guest</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- ── PRODUCT PREVIEW ── -->
+  <section id="preview">
+    <div class="section-wide">
+      <div class="section-header reveal">
+        <p class="section-label" data-en="Product" data-ar="المنتج">Product</p>
+        <h2 class="section-title font-display">
+          <span data-en="See Blue in action." data-ar="شاهد Blue أثناء العمل.">See Blue in action.</span>
+        </h2>
+        <p class="section-lede" data-en="Four surfaces. One operating layer. Built for the way guests, staff, and managers actually work." data-ar="أربع واجهات. طبقة تشغيل واحدة. مصممة لطريقة عمل الضيوف، الموظفين، والإدارة فعلياً.">Four surfaces. One operating layer. Built for the way guests, staff, and managers actually work.</p>
+      </div>
+
+      <div class="preview-grid">
+
+        <!-- 1. Guest Mobile App -->
+        <article class="preview-card reveal">
+          <div class="preview-mock">
+            <div class="mock-status">
+              <span>BLUE • SUITE 1204</span>
+              <div class="dots"><i></i><i></i><i></i></div>
+            </div>
+            <div class="mock-row"><div class="mock-avatar"></div><div class="mock-line"></div><span class="mock-pill">Open</span></div>
+            <div class="mock-row"><div class="mock-avatar gold"></div><div class="mock-line short"></div><span class="mock-pill gold">Spa</span></div>
+            <div class="mock-row"><div class="mock-avatar"></div><div class="mock-line"></div><span class="mock-pill">24/7</span></div>
+            <div style="display:flex; gap:0.4rem; margin-top:auto;">
+              <div class="mock-tile"><div class="mock-line aqua"></div><div class="mock-line short"></div></div>
+              <div class="mock-tile"><div class="mock-line"></div><div class="mock-line short"></div></div>
+              <div class="mock-tile"><div class="mock-line"></div><div class="mock-line short"></div></div>
+            </div>
+          </div>
+          <div class="preview-meta">
+            <span class="preview-tag" data-en="Guest App" data-ar="تطبيق الضيف">Guest App</span>
+            <h3 class="preview-title" data-en="Guest Mobile App" data-ar="تطبيق الضيف المحمول">Guest Mobile App</h3>
+            <p class="preview-text" data-en="One branded app where guests browse services, place requests, and control their stay — in their language, on their schedule." data-ar="تطبيق واحد بعلامتك يستعرض من خلاله الضيف الخدمات ويقدم طلباته ويتحكم بإقامته — بلغته وفي وقته.">One branded app where guests browse services, place requests, and control their stay — in their language, on their schedule.</p>
+          </div>
+        </article>
+
+        <!-- 2. Room Service Ordering -->
+        <article class="preview-card reveal">
+          <div class="preview-mock">
+            <div class="mock-status">
+              <span>ROOM SERVICE</span>
+              <div class="dots"><i></i><i></i><i></i></div>
+            </div>
+            <div class="mock-row"><div class="mock-avatar gold"></div><div class="mock-line"></div><span class="mock-pill gold">$24</span></div>
+            <div class="mock-row"><div class="mock-avatar gold"></div><div class="mock-line short"></div><span class="mock-pill gold">$12</span></div>
+            <div class="mock-row"><div class="mock-avatar"></div><div class="mock-line"></div><span class="mock-pill">Add</span></div>
+            <div class="mock-kpi" style="margin-top:auto;">
+              <div><span data-en="ORDER TOTAL" data-ar="إجمالي الطلب">ORDER TOTAL</span><br><strong>$ 86.50</strong></div>
+              <span class="mock-pill gold" data-en="Checkout" data-ar="إتمام">Checkout</span>
+            </div>
+          </div>
+          <div class="preview-meta">
+            <span class="preview-tag" data-en="F&B" data-ar="المأكولات والمشروبات">F&B</span>
+            <h3 class="preview-title" data-en="Room Service Ordering" data-ar="طلبات خدمة الغرف">Room Service Ordering</h3>
+            <p class="preview-text" data-en="Beautiful digital menus, upsell modifiers, and instant ticketing — turning every craving into trackable, billable revenue." data-ar="قوائم رقمية جميلة، إضافات بيع، وتذاكر فورية — تحويل كل طلب إلى إيراد مُتتبع وقابل للفوترة.">Beautiful digital menus, upsell modifiers, and instant ticketing — turning every craving into trackable, billable revenue.</p>
+          </div>
+        </article>
+
+        <!-- 3. Multilingual Chat -->
+        <article class="preview-card reveal">
+          <div class="preview-mock">
+            <div class="mock-status">
+              <span>LIVE CHAT • AR ↔ EN</span>
+              <div class="dots"><i></i><i></i><i></i></div>
+            </div>
+            <div class="mock-bubble in"><div class="mock-avatar" style="width:14px;height:14px;"></div><div class="mock-line" style="width:80px;"></div></div>
+            <div class="mock-bubble out"><div class="mock-line aqua" style="width:90px;"></div></div>
+            <div class="mock-bubble in"><div class="mock-avatar" style="width:14px;height:14px;"></div><div class="mock-line" style="width:60px;"></div></div>
+            <div class="mock-bubble out"><div class="mock-line aqua" style="width:70px;"></div></div>
+            <div style="display:flex; align-items:center; gap:0.4rem; margin-top:auto; padding:0.4rem 0.5rem; border:1px solid var(--glass-border); border-radius:0.35rem;">
+              <span class="mock-pill" data-en="AR → EN" data-ar="AR → EN">AR → EN</span>
+              <div class="mock-line short"></div>
+            </div>
+          </div>
+          <div class="preview-meta">
+            <span class="preview-tag" data-en="Communication" data-ar="التواصل">Communication</span>
+            <h3 class="preview-title" data-en="Multilingual Guest Chat" data-ar="محادثة الضيوف متعددة اللغات">Multilingual Guest Chat</h3>
+            <p class="preview-text" data-en="Guests message in any language. Staff reply in theirs. Blue translates both sides in real time — no apps, no friction." data-ar="الضيوف يراسلون بأي لغة. الموظفون يردّون بلغتهم. Blue تترجم الطرفين فورياً — دون تطبيقات أو تعقيد.">Guests message in any language. Staff reply in theirs. Blue translates both sides in real time — no apps, no friction.</p>
+          </div>
+        </article>
+
+        <!-- 4. Operations Dashboard -->
+        <article class="preview-card reveal">
+          <div class="preview-mock">
+            <div class="mock-status">
+              <span>OPS DASHBOARD</span>
+              <div class="dots"><i></i><i></i><i></i></div>
+            </div>
+            <div style="display:flex; gap:0.4rem;">
+              <div class="mock-kpi" style="flex:1;"><div><span>OPEN</span><br><strong>14</strong></div></div>
+              <div class="mock-kpi" style="flex:1;"><div><span>AVG</span><br><strong>3.2m</strong></div></div>
+              <div class="mock-kpi" style="flex:1;"><div><span>CSAT</span><br><strong>4.8</strong></div></div>
+            </div>
+            <div style="padding:0.5rem 0.6rem; background:rgba(255,255,255,0.03); border:1px solid var(--glass-border); border-radius:0.35rem;">
+              <div class="mock-bar"></div>
+              <div style="display:flex; justify-content:space-between; margin-top:0.4rem; font-size:0.55rem; color:var(--white-dim); letter-spacing:0.08em;">
+                <span>HOUSEKEEPING</span><span>65%</span>
+              </div>
+            </div>
+            <div class="mock-row"><div class="mock-avatar"></div><div class="mock-line"></div><span class="mock-pill">Live</span></div>
+          </div>
+          <div class="preview-meta">
+            <span class="preview-tag" data-en="Operations" data-ar="العمليات">Operations</span>
+            <h3 class="preview-title" data-en="Operations Dashboard" data-ar="لوحة تحكم العمليات">Operations Dashboard</h3>
+            <p class="preview-text" data-en="Live visibility into every request, every department, every guest. SLAs, response times, revenue, satisfaction — all in one screen." data-ar="رؤية حية لكل طلب، كل قسم، كل ضيف. أوقات الاستجابة، الإيرادات، الرضا — في شاشة واحدة.">Live visibility into every request, every department, every guest. SLAs, response times, revenue, satisfaction — all in one screen.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ── FEATURES ── -->
-  <section id="features">
-    <div class="features-header reveal">
-      <p class="section-label" data-en="Key Features" data-ar="المميزات الرئيسية">Key Features</p>
+  <section id="features" class="section section-narrow">
+    <div class="section-header reveal">
+      <p class="section-label" data-en="Capabilities" data-ar="القدرات">Capabilities</p>
       <h2 class="section-title font-display">
-        <span data-en="Everything a guest needs.<br>Everything a hotel requires." data-ar="كل ما يحتاجه الضيف.<br>كل ما يتطلبه الفندق.">Everything a guest needs.<br>Everything a hotel requires.</span>
+        <span data-en="Engineered for hospitality." data-ar="مصممة للضيافة.">Engineered for hospitality.</span>
       </h2>
+      <p class="section-lede" data-en="Every capability tuned to the realities of running a hotel — not generic SaaS retrofitted for hospitality." data-ar="كل ميزة مُصمَّمة لواقع تشغيل الفنادق — وليست منصة عامة مُكيَّفة بالقوة.">Every capability tuned to the realities of running a hotel — not generic SaaS retrofitted for hospitality.</p>
     </div>
     <div class="features-grid reveal">
       <div class="feature-card">
         <div class="feature-num">01</div>
-        <div class="feature-icon">🔑</div>
-        <p class="feature-title" data-en="Digital Room Access" data-ar="دخول رقمي للغرفة">Digital Room Access</p>
-        <p class="feature-text" data-en="Bluetooth & NFC room unlock. No card needed. Always available as backup." data-ar="فتح الغرفة عبر البلوتوث والـ NFC. بدون بطاقة. مع الاحتفاظ بالبديل التقليدي.">Bluetooth & NFC room unlock. No card needed. Always available as backup.</p>
+        <div class="feature-icon">📱</div>
+        <h3 class="feature-title" data-en="Mobile-First Guest App" data-ar="تطبيق ضيف يعمل أولاً على الموبايل">Mobile-First Guest App</h3>
+        <p class="feature-text" data-en="No download required. Guests access everything via QR code or branded link the moment they check in." data-ar="بدون تحميل. يصل الضيف إلى كل شيء عبر QR أو رابط بعلامتك لحظة الوصول.">No download required. Guests access everything via QR code or branded link the moment they check in.</p>
       </div>
       <div class="feature-card">
         <div class="feature-num">02</div>
-        <div class="feature-icon">🍽️</div>
-        <p class="feature-title" data-en="Room Service & F&B Ordering" data-ar="خدمة الغرف والطلبات">Room Service & F&B Ordering</p>
-        <p class="feature-text" data-en="Browse menus, place orders, track delivery in real time — from room, pool, or beach." data-ar="تصفح القوائم واطلب وتابع التوصيل لحظياً — من الغرفة أو المسبح أو الشاطئ.">Browse menus, place orders, track delivery in real time — from room, pool, or beach.</p>
+        <div class="feature-icon">🌐</div>
+        <h3 class="feature-title" data-en="Multilingual by Default" data-ar="متعددة اللغات افتراضياً">Multilingual by Default</h3>
+        <p class="feature-text" data-en="Arabic, English, French, German, Russian, and more — with live translation between guests and staff." data-ar="عربية، إنجليزية، فرنسية، ألمانية، روسية، والمزيد — مع ترجمة حيّة بين الضيف والموظف.">Arabic, English, French, German, Russian, and more — with live translation between guests and staff.</p>
       </div>
       <div class="feature-card">
         <div class="feature-num">03</div>
-        <div class="feature-icon">🛎️</div>
-        <p class="feature-title" data-en="Housekeeping on Demand" data-ar="خدمة الغرف عند الطلب">Housekeeping on Demand</p>
-        <p class="feature-text" data-en="Towels, laundry, ironing, cleaning — requested instantly from the app." data-ar="مناشف، غسيل، كي، تنظيف — تُطلَب فوراً من التطبيق.">Towels, laundry, ironing, cleaning — requested instantly from the app.</p>
+        <div class="feature-icon">⚙️</div>
+        <h3 class="feature-title" data-en="Smart Request Routing" data-ar="توجيه ذكي للطلبات">Smart Request Routing</h3>
+        <p class="feature-text" data-en="Every request reaches the right department instantly — with SLAs, escalation, and zero lost tickets." data-ar="كل طلب يصل للقسم المناسب فوراً — مع زمن استجابة محدد، تصعيد تلقائي، وصفر فقدان.">Every request reaches the right department instantly — with SLAs, escalation, and zero lost tickets.</p>
       </div>
       <div class="feature-card">
         <div class="feature-num">04</div>
-        <div class="feature-icon">🌿</div>
-        <p class="feature-title" data-en="Spa & Wellness Booking" data-ar="حجز السبا والعافية">Spa & Wellness Booking</p>
-        <p class="feature-text" data-en="Browse treatments, book slots, reschedule — all without front desk calls." data-ar="تصفح العلاجات، احجز، غير موعدك — بدون أي مكالمات.">Browse treatments, book slots, reschedule — all without front desk calls.</p>
+        <div class="feature-icon">💎</div>
+        <h3 class="feature-title" data-en="White-Label Branding" data-ar="بعلامتك الكاملة">White-Label Branding</h3>
+        <p class="feature-text" data-en="Your colors, your logo, your tone. Guests see your brand — Blue stays invisible." data-ar="ألوانك، شعارك، أسلوبك. الضيف يرى علامتك — وBlue تبقى غير مرئية.">Your colors, your logo, your tone. Guests see your brand — Blue stays invisible.</p>
       </div>
       <div class="feature-card">
         <div class="feature-num">05</div>
-        <div class="feature-icon">💬</div>
-        <p class="feature-title" data-en="Multilingual Live Chat" data-ar="دردشة مباشرة متعددة اللغات">Multilingual Live Chat</p>
-        <p class="feature-text" data-en="Guests chat in their language. Staff reply in theirs. Auto-translation bridges both." data-ar="الضيوف يتحدثون بلغتهم. الموظفون بلغتهم. ترجمة تلقائية تجمع الطرفين.">Guests chat in their language. Staff reply in theirs. Auto-translation bridges both.</p>
+        <div class="feature-icon">📊</div>
+        <h3 class="feature-title" data-en="Live Operations Dashboard" data-ar="لوحة تحكم تشغيلية حيّة">Live Operations Dashboard</h3>
+        <p class="feature-text" data-en="Real-time visibility into requests, response times, revenue and guest satisfaction — across every department." data-ar="رؤية حيّة للطلبات، أزمنة الاستجابة، الإيرادات، ورضا الضيوف — في كل الأقسام.">Real-time visibility into requests, response times, revenue and guest satisfaction — across every department.</p>
       </div>
       <div class="feature-card">
         <div class="feature-num">06</div>
-        <div class="feature-icon">📊</div>
-        <p class="feature-title" data-en="Staff Operations Dashboard" data-ar="لوحة تحكم العمليات">Staff Operations Dashboard</p>
-        <p class="feature-text" data-en="Request routing, SLA timers, escalation alerts, and team performance — in one view." data-ar="توزيع الطلبات، مؤقتات الخدمة، تنبيهات التصعيد، وأداء الفريق — في شاشة واحدة.">Request routing, SLA timers, escalation alerts, and team performance — in one view.</p>
+        <div class="feature-icon">🔗</div>
+        <h3 class="feature-title" data-en="Works With Your Stack" data-ar="تعمل مع أنظمتك الحالية">Works With Your Stack</h3>
+        <p class="feature-text" data-en="Sits alongside Opera, Protel, Cloudbeds and any modern PMS — without replacing what already works." data-ar="تعمل بجانب Opera، Protel، Cloudbeds وأي PMS حديث — دون استبدال ما يعمل بالفعل.">Sits alongside Opera, Protel, Cloudbeds and any modern PMS — without replacing what already works.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BUSINESS VALUE / KPI ── -->
+  <section id="value" class="section">
+    <div class="section-wide">
+      <div class="section-header reveal">
+        <p class="section-label" data-en="Business Impact" data-ar="الأثر التجاري">Business Impact</p>
+        <h2 class="section-title font-display">
+          <span data-en="Why hotels choose Blue." data-ar="لماذا تختار الفنادق Blue.">Why hotels choose Blue.</span>
+        </h2>
+        <p class="section-lede" data-en="Outcomes that move P&Ls — not vanity metrics." data-ar="نتائج تنعكس على الأرباح — وليست أرقاماً للزينة.">Outcomes that move P&Ls — not vanity metrics.</p>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-card reveal">
+          <div class="kpi-value">−70<span class="unit">%</span></div>
+          <p class="kpi-label" data-en="Fewer Guest Phone Calls" data-ar="انخفاض مكالمات الضيوف">Fewer Guest Phone Calls</p>
+          <p class="kpi-text" data-en="Routine requests move from the switchboard to a tap — freeing front-desk capacity for what matters." data-ar="الطلبات الروتينية تنتقل من السنترال إلى زر — لتحرير طاقم الاستقبال لما يهم فعلاً.">Routine requests move from the switchboard to a tap — freeing front-desk capacity for what matters.</p>
+        </div>
+        <div class="kpi-card reveal">
+          <div class="kpi-value">3×</div>
+          <p class="kpi-label" data-en="Faster Request Handling" data-ar="استجابة أسرع بثلاثة أضعاف">Faster Request Handling</p>
+          <p class="kpi-text" data-en="Smart routing and live ticketing collapse minutes into seconds — with SLA visibility across every department." data-ar="توجيه ذكي وتذاكر حيّة تختصر الدقائق إلى ثوانٍ — مع وضوح كامل في كل الأقسام.">Smart routing and live ticketing collapse minutes into seconds — with SLA visibility across every department.</p>
+        </div>
+        <div class="kpi-card reveal">
+          <div class="kpi-value">+30<span class="unit">%</span></div>
+          <p class="kpi-label" data-en="Service Revenue Growth" data-ar="نمو إيرادات الخدمات">Service Revenue Growth</p>
+          <p class="kpi-text" data-en="Visible menus, smart upsells and frictionless ordering turn passive stays into active spending." data-ar="قوائم مرئية، عروض بيع ذكية، وطلبات سلسة تحوّل الإقامة الصامتة إلى إنفاق فعّال.">Visible menus, smart upsells and frictionless ordering turn passive stays into active spending.</p>
+        </div>
+        <div class="kpi-card reveal">
+          <div class="kpi-value">+45<span class="unit">%</span></div>
+          <p class="kpi-label" data-en="Higher Guest Satisfaction" data-ar="ارتفاع رضا الضيوف">Higher Guest Satisfaction</p>
+          <p class="kpi-text" data-en="Guests get answers, services and recognition in their own language — at any hour of the day or night." data-ar="يحصل الضيف على الإجابة والخدمة بلغته — في أي وقت من اليوم أو الليل.">Guests get answers, services and recognition in their own language — at any hour of the day or night.</p>
+        </div>
+        <div class="kpi-card reveal">
+          <div class="kpi-value">2×</div>
+          <p class="kpi-label" data-en="Staff Productivity" data-ar="إنتاجية الموظفين">Staff Productivity</p>
+          <p class="kpi-text" data-en="One inbox per department. No paper. No duplicate requests. No misrouted tickets." data-ar="صندوق وارد واحد لكل قسم. بلا ورق. بلا تكرار. بلا توجيه خاطئ.">One inbox per department. No paper. No duplicate requests. No misrouted tickets.</p>
+        </div>
+        <div class="kpi-card reveal">
+          <div class="kpi-value">100<span class="unit">%</span></div>
+          <p class="kpi-label" data-en="Operational Visibility" data-ar="رؤية تشغيلية كاملة">Operational Visibility</p>
+          <p class="kpi-text" data-en="Live dashboards show every open request, response time, revenue line and satisfaction score — in real time." data-ar="لوحات حيّة تعرض كل طلب مفتوح، زمن الاستجابة، خط الإيرادات، ومؤشر الرضا — في الوقت الفعلي.">Live dashboards show every open request, response time, revenue line and satisfaction score — in real time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MULTILINGUAL ── -->
+  <section id="multilingual">
+    <div class="multi-inner">
+      <div class="multi-content reveal">
+        <p class="section-label" data-en="Multilingual Advantage" data-ar="ميزة تعدد اللغات">Multilingual Advantage</p>
+        <h2 class="section-title font-display">
+          <span data-en="Every guest. Every language.<br>No friction." data-ar="كل ضيف. كل لغة.<br>دون حواجز.">Every guest. Every language.<br>No friction.</span>
+        </h2>
+        <p class="section-lede" data-en="The hardest problem in international hospitality isn't service — it's communication. Blue dissolves the language barrier between guests and staff in real time." data-ar="أصعب مشكلة في الضيافة الدولية ليست الخدمة — بل التواصل. Blue تذيب حاجز اللغة بين الضيف والموظف فورياً.">The hardest problem in international hospitality isn't service — it's communication. Blue dissolves the language barrier between guests and staff in real time.</p>
+        <ul class="multi-points">
+          <li><span class="multi-check">✓</span><span data-en="Guests message in their own language — Arabic, English, French, German, Russian, Chinese and more." data-ar="الضيوف يتواصلون بلغتهم — العربية، الإنجليزية، الفرنسية، الألمانية، الروسية، الصينية وغيرها.">Guests message in their own language — Arabic, English, French, German, Russian, Chinese and more.</span></li>
+          <li><span class="multi-check">✓</span><span data-en="Staff read and reply in their native language — no second-guessing meaning." data-ar="الموظفون يقرأون ويردّون بلغتهم الأم — دون قلق من الفهم.">Staff read and reply in their native language — no second-guessing meaning.</span></li>
+          <li><span class="multi-check">✓</span><span data-en="Blue translates both sides instantly with hospitality-tuned models." data-ar="Blue تترجم الطرفين فورياً عبر نماذج مُحسَّنة للضيافة.">Blue translates both sides instantly with hospitality-tuned models.</span></li>
+          <li><span class="multi-check">✓</span><span data-en="Faster service. Fewer mistakes. International guests who feel genuinely at home." data-ar="خدمة أسرع. أخطاء أقل. ضيوف دوليون يشعرون بأنهم في بيتهم.">Faster service. Fewer mistakes. International guests who feel genuinely at home.</span></li>
+        </ul>
+      </div>
+
+      <div class="translate-demo reveal">
+        <div class="translate-row">
+          <div class="translate-bubble guest">
+            <div class="translate-meta"><span class="translate-flag">🇸🇦</span><span data-en="Guest · Arabic" data-ar="الضيف · العربية">Guest · Arabic</span></div>
+            <div class="translate-original">ممكن إفطار في الغرفة الساعة ٨ صباحاً؟</div>
+            <div class="translate-translation" data-en="↳ Can I have breakfast in the room at 8am?" data-ar="↳ Can I have breakfast in the room at 8am?">↳ Can I have breakfast in the room at 8am?</div>
+          </div>
+        </div>
+
+        <span class="translate-pill" data-en="Auto-translated by Blue" data-ar="ترجمة تلقائية عبر Blue">Auto-translated by Blue</span>
+
+        <div class="translate-row right">
+          <div class="translate-bubble staff">
+            <div class="translate-meta" style="justify-content:flex-end;"><span data-en="Staff · English" data-ar="الموظف · الإنجليزية">Staff · English</span><span class="translate-flag">🇬🇧</span></div>
+            <div style="font-size:0.92rem; color:var(--white);">Of course — your breakfast will be served at 8:00 sharp.</div>
+            <div class="translate-translation" style="direction:rtl; font-family:var(--font-arabic);">↳ بالتأكيد — سيُقدَّم إفطارك تماماً في الثامنة.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE ECOSYSTEM ── -->
+  <section id="ecosystem" class="section">
+    <div class="section-wide">
+      <div class="section-header reveal">
+        <p class="section-label" data-en="Service Ecosystem" data-ar="منظومة الخدمات">Service Ecosystem</p>
+        <h2 class="section-title font-display">
+          <span data-en="One platform. Every guest request." data-ar="منصة واحدة. كل طلبات الضيوف.">One platform. Every guest request.</span>
+        </h2>
+        <p class="section-lede" data-en="From housekeeping to spa bookings, Blue unifies every guest-facing service under one branded experience." data-ar="من خدمة الغرف إلى حجوزات السبا، توحّد Blue كل الخدمات تحت تجربة واحدة بعلامتك.">From housekeeping to spa bookings, Blue unifies every guest-facing service under one branded experience.</p>
+      </div>
+
+      <div class="services-grid reveal">
+        <div class="service-tile"><div class="service-icon">🍽️</div><span class="service-name" data-en="Room Service" data-ar="خدمة الغرف">Room Service</span></div>
+        <div class="service-tile"><div class="service-icon">🛏️</div><span class="service-name" data-en="Housekeeping" data-ar="التدبير الفندقي">Housekeeping</span></div>
+        <div class="service-tile"><div class="service-icon">🎩</div><span class="service-name" data-en="Concierge" data-ar="كونسيرج">Concierge</span></div>
+        <div class="service-tile"><div class="service-icon">💆</div><span class="service-name" data-en="Spa & Wellness" data-ar="السبا والعافية">Spa & Wellness</span></div>
+        <div class="service-tile"><div class="service-icon">🍷</div><span class="service-name" data-en="Restaurant Reservations" data-ar="حجوزات المطعم">Restaurant Reservations</span></div>
+        <div class="service-tile"><div class="service-icon">🛠️</div><span class="service-name" data-en="Maintenance Requests" data-ar="طلبات الصيانة">Maintenance Requests</span></div>
+        <div class="service-tile"><div class="service-icon">🚗</div><span class="service-name" data-en="Airport Transfers" data-ar="نقل المطار">Airport Transfers</span></div>
+        <div class="service-tile"><div class="service-icon">💬</div><span class="service-name" data-en="Guest Support" data-ar="دعم الضيوف">Guest Support</span></div>
+      </div>
+
+      <div class="ecosystem-banner reveal">
+        <h3>
+          <span data-en="Manage <em>20+ hospitality services</em><br>from one unified experience." data-ar="إدارة <em>أكثر من 20 خدمة فندقية</em><br>من تجربة موحّدة واحدة.">Manage <em>20+ hospitality services</em><br>from one unified experience.</span>
+        </h3>
+        <p data-en="Blue is far more than a room service app. It is the operating layer that connects every guest touchpoint — across F&B, wellness, transport, support, activities, and more." data-ar="Blue أبعد بكثير من تطبيق خدمة غرف. إنها الطبقة التشغيلية التي تربط كل نقاط تواصل الضيف — في المأكولات، العافية، النقل، الدعم، الأنشطة، وأكثر.">Blue is far more than a room service app. It is the operating layer that connects every guest touchpoint — across F&B, wellness, transport, support, activities, and more.</p>
       </div>
     </div>
   </section>
@@ -963,27 +1324,45 @@
   <section id="audience">
     <div class="audience-inner">
       <div class="reveal">
-        <p class="section-label" data-en="Who It's For" data-ar="لمن صُمِّم">Who It's For</p>
+        <p class="section-label" data-en="Built For" data-ar="مصممة لـ">Built For</p>
         <h2 class="section-title font-display">
-          <span data-en="Built for premium hospitality<br>in MENA." data-ar="مصمم للضيافة الفاخرة<br>في منطقة الشرق الأوسط.">Built for premium hospitality<br>in MENA.</span>
+          <span data-en="Made for properties that<br>compete on experience." data-ar="مصممة للفنادق التي<br>تتنافس على التجربة.">Made for properties that<br>compete on experience.</span>
         </h2>
       </div>
-      <div class="audience-grid reveal">
-        <div class="audience-card">
+      <div class="audience-grid">
+        <div class="audience-card reveal">
           <div class="audience-icon">🏨</div>
-          <p class="audience-title" data-en="Large Hotels & Resorts" data-ar="الفنادق الكبيرة والمنتجعات">Large Hotels & Resorts</p>
-          <p class="audience-text" data-en="High-volume properties needing structured request management and multi-department coordination." data-ar="المنشآت ذات الحجم الكبير التي تحتاج لإدارة منظمة للطلبات وتنسيق متعدد الأقسام.">High-volume properties needing structured request management and multi-department coordination.</p>
+          <h3 class="audience-title" data-en="Luxury Hotels" data-ar="فنادق فاخرة">Luxury Hotels</h3>
+          <p class="audience-text" data-en="4 & 5-star properties protecting brand standards and elevating every guest touchpoint." data-ar="فنادق 4 و5 نجوم تحافظ على معايير علامتها وترتقي بكل نقطة تواصل.">4 & 5-star properties protecting brand standards and elevating every guest touchpoint.</p>
         </div>
-        <div class="audience-card">
-          <div class="audience-icon">🌊</div>
-          <p class="audience-title" data-en="Red Sea & Coastal Resorts" data-ar="منتجعات البحر الأحمر والساحل">Red Sea & Coastal Resorts</p>
-          <p class="audience-text" data-en="Where international guests expect digital-first service and pool/beach order delivery." data-ar="حيث يتوقع الضيوف الدوليون خدمة رقمية متقدمة وتوصيل للمسبح والشاطئ.">Where international guests expect digital-first service and pool/beach order delivery.</p>
+        <div class="audience-card reveal">
+          <div class="audience-icon">🌴</div>
+          <h3 class="audience-title" data-en="Resorts" data-ar="منتجعات">Resorts</h3>
+          <p class="audience-text" data-en="Sprawling properties where guests can't always reach reception — and shouldn't have to." data-ar="منتجعات شاسعة حيث لا يستطيع الضيف الوصول للاستقبال دائماً — ولا ينبغي أن يضطر.">Sprawling properties where guests can't always reach reception — and shouldn't have to.</p>
         </div>
-        <div class="audience-card">
-          <div class="audience-icon">⭐</div>
-          <p class="audience-title" data-en="5-Star Properties" data-ar="الفنادق خمس نجوم">5-Star Properties</p>
-          <p class="audience-text" data-en="Brands that compete on experience and need a seamless digital layer to match." data-ar="العلامات التجارية التي تتنافس على التجربة وتحتاج لطبقة رقمية تتناسب مع مستواها.">Brands that compete on experience and need a seamless digital layer to match.</p>
+        <div class="audience-card reveal">
+          <div class="audience-icon">🏢</div>
+          <h3 class="audience-title" data-en="Hotel Groups" data-ar="مجموعات فندقية">Hotel Groups</h3>
+          <p class="audience-text" data-en="Multi-property operators standardizing guest experience and operations across portfolios." data-ar="مشغّلو فنادق متعددة يوحّدون تجربة الضيف والعمليات عبر محفظتهم.">Multi-property operators standardizing guest experience and operations across portfolios.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST ── -->
+  <section id="trust">
+    <div class="trust-inner reveal">
+      <p class="section-label" data-en="Designed For" data-ar="مصممة لـ">Designed For</p>
+      <h2 class="section-title font-display">
+        <span data-en="Built for modern hospitality operations." data-ar="مصممة لعمليات الضيافة الحديثة.">Built for modern hospitality operations.</span>
+      </h2>
+      <p class="section-lede" style="margin:0 auto;" data-en="Blue is purpose-built for the demands of premium properties operating in international, multilingual, high-volume environments." data-ar="Blue مصممة خصيصاً لمتطلبات الفنادق الراقية التي تعمل في بيئات دولية، متعددة اللغات، وعالية الكثافة.">Blue is purpose-built for the demands of premium properties operating in international, multilingual, high-volume environments.</p>
+      <div class="trust-row">
+        <div class="trust-cell"><div class="trust-icon">🏨</div><span class="trust-label" data-en="Hotels" data-ar="فنادق">Hotels</span></div>
+        <div class="trust-cell"><div class="trust-icon">🌴</div><span class="trust-label" data-en="Resorts" data-ar="منتجعات">Resorts</span></div>
+        <div class="trust-cell"><div class="trust-icon">💎</div><span class="trust-label" data-en="Luxury Properties" data-ar="فنادق فاخرة">Luxury Properties</span></div>
+        <div class="trust-cell"><div class="trust-icon">🌐</div><span class="trust-label" data-en="Multi-Language Ops" data-ar="عمليات متعددة اللغات">Multi-Language Ops</span></div>
+        <div class="trust-cell"><div class="trust-icon">📈</div><span class="trust-label" data-en="High-Volume Stays" data-ar="إقامات عالية الكثافة">High-Volume Stays</span></div>
       </div>
     </div>
   </section>
@@ -992,22 +1371,25 @@
   <section id="demo">
     <div class="demo-inner">
       <div class="demo-header reveal">
-        <p class="section-label" data-en="Get Started" data-ar="ابدأ الآن">Get Started</p>
+        <p class="section-label" data-en="Book a Demo" data-ar="احجز عرضاً">Book a Demo</p>
         <h2 class="section-title font-display">
-          <span data-en="Request a demo<br>for your property." data-ar="اطلب عرضاً<br>لمنشأتك.">Request a demo<br>for your property.</span>
+          <span data-en="See Blue running on your property." data-ar="شاهد Blue تعمل في فندقك.">See Blue running on your property.</span>
         </h2>
-        <p style="color:var(--white-dim);font-size:0.95rem;margin-top:1rem;" data-en="We'll be in touch within 24 hours." data-ar="سنتواصل معك خلال 24 ساعة.">We'll be in touch within 24 hours.</p>
+        <p class="section-lede" style="margin: 0 auto;" data-en="A 30-minute live walkthrough tailored to your property, brand and guest profile." data-ar="جلسة حيّة لمدة 30 دقيقة مُخصصة لفندقك، علامتك، وملف ضيوفك.">A 30-minute live walkthrough tailored to your property, brand and guest profile.</p>
+        <div class="demo-perks">
+          <span data-en="30-minute walkthrough" data-ar="جلسة 30 دقيقة">30-minute walkthrough</span>
+          <span data-en="Tailored to your property" data-ar="مخصصة لفندقك">Tailored to your property</span>
+          <span data-en="No commitment" data-ar="بدون التزام">No commitment</span>
+        </div>
       </div>
 
       <div class="form-wrap reveal">
-        <!-- Success State -->
         <div class="form-success" id="formSuccess">
           <div class="form-success-icon">✦</div>
           <h3 class="font-display" data-en="Request received." data-ar="تم استلام طلبك.">Request received.</h3>
-          <p data-en="Thank you for your interest in Blue. Our team will reach out within 24 hours." data-ar="شكراً لاهتمامك بـ Blue. سيتواصل فريقنا معك خلال 24 ساعة.">Thank you for your interest in Blue. Our team will reach out within 24 hours.</p>
+          <p data-en="Thank you for your interest in Blue. Our hospitality team will reach out within 24 hours to schedule your demo." data-ar="شكراً لاهتمامك بـ Blue. سيتواصل معك فريقنا خلال 24 ساعة لتحديد موعد العرض.">Thank you for your interest in Blue. Our hospitality team will reach out within 24 hours to schedule your demo.</p>
         </div>
 
-        <!-- Form -->
         <form id="demoForm" action="https://formspree.io/f/xdavaype" method="POST">
           <div class="form-row">
             <div class="form-group">
@@ -1015,7 +1397,7 @@
               <input type="text" id="name" name="name" placeholder="Jane Smith" required />
             </div>
             <div class="form-group">
-              <label for="hotel" data-en="Hotel Name *" data-ar="اسم الفندق *">Hotel Name *</label>
+              <label for="hotel" data-en="Hotel / Property Name *" data-ar="اسم الفندق *">Hotel / Property Name *</label>
               <input type="text" id="hotel" name="hotel" placeholder="Grand Palace Hotel" required />
             </div>
           </div>
@@ -1024,29 +1406,43 @@
               <label for="role" data-en="Your Role *" data-ar="وظيفتك *">Your Role *</label>
               <select id="role" name="role" required>
                 <option value="" disabled selected data-en="Select role" data-ar="اختر الوظيفة">Select role</option>
-                <option data-en="General Manager" data-ar="مدير عام">General Manager</option>
                 <option data-en="Hotel Owner" data-ar="مالك فندق">Hotel Owner</option>
+                <option data-en="General Manager" data-ar="مدير عام">General Manager</option>
                 <option data-en="Operations Manager" data-ar="مدير عمليات">Operations Manager</option>
+                <option data-en="Guest Experience Manager" data-ar="مدير تجربة الضيف">Guest Experience Manager</option>
                 <option data-en="IT Manager" data-ar="مدير تقنية المعلومات">IT Manager</option>
                 <option data-en="Revenue Manager" data-ar="مدير الإيرادات">Revenue Manager</option>
                 <option data-en="Other" data-ar="أخرى">Other</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="phone" data-en="Phone Number *" data-ar="رقم الهاتف *">Phone Number *</label>
+              <label for="rooms" data-en="Number of Rooms" data-ar="عدد الغرف">Number of Rooms</label>
+              <select id="rooms" name="rooms">
+                <option value="" disabled selected data-en="Select range" data-ar="اختر الفئة">Select range</option>
+                <option>1 – 50</option>
+                <option>51 – 150</option>
+                <option>151 – 300</option>
+                <option>301 – 500</option>
+                <option>500+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email" data-en="Work Email *" data-ar="البريد الإلكتروني *">Work Email *</label>
+              <input type="email" id="email" name="email" placeholder="you@hotel.com" required style="direction:ltr;" />
+            </div>
+            <div class="form-group">
+              <label for="phone" data-en="Phone / WhatsApp *" data-ar="هاتف / واتساب *">Phone / WhatsApp *</label>
               <input type="tel" id="phone" name="phone" placeholder="+20 1XX XXXX XXXX" required style="direction:ltr;" />
             </div>
           </div>
           <div class="form-group">
-            <label for="email" data-en="Email Address *" data-ar="البريد الإلكتروني *">Email Address *</label>
-            <input type="email" id="email" name="email" placeholder="you@hotel.com" required style="direction:ltr;" />
+            <label for="message" data-en="What would you like to see? (Optional)" data-ar="ما الذي تود رؤيته؟ (اختياري)">What would you like to see? (Optional)</label>
+            <textarea id="message" name="message" placeholder="Tell us about your property, your guest mix, or specific operational challenges..."></textarea>
           </div>
-          <div class="form-group">
-            <label for="message" data-en="Any notes? (Optional)" data-ar="ملاحظات إضافية؟ (اختياري)">Any notes? (Optional)</label>
-            <textarea id="message" name="message" placeholder="Tell us about your property or any specific questions..."></textarea>
-          </div>
-          <button type="submit" class="btn-primary form-submit" data-en="Send Demo Request" data-ar="إرسال طلب العرض">Send Demo Request</button>
-          <p class="form-note" data-en="Your data is private and will only be used to contact you about Blue." data-ar="بياناتك خاصة ولن تُستخدم إلا للتواصل معك بشأن Blue.">Your data is private and will only be used to contact you about Blue.</p>
+          <button type="submit" class="btn-primary form-submit" data-en="Book My Demo" data-ar="احجز عرضي الآن">Book My Demo</button>
+          <p class="form-note" data-en="Your data stays private. Used only to contact you about Blue." data-ar="بياناتك خاصة. تُستخدم فقط للتواصل معك بشأن Blue.">Your data stays private. Used only to contact you about Blue.</p>
         </form>
       </div>
     </div>
@@ -1055,23 +1451,34 @@
   <!-- ── CONTACT ── -->
   <section id="contact">
     <div class="contact-inner reveal">
-      <p class="section-label" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</p>
-      <h2 class="section-title font-display" style="font-size:2rem;">
-        <span data-en="Prefer to talk directly?" data-ar="تفضل التحدث مباشرة؟">Prefer to talk directly?</span>
+      <p class="section-label" data-en="Talk to Us" data-ar="تواصل معنا">Talk to Us</p>
+      <h2 class="section-title font-display" style="font-size:clamp(1.6rem, 3.5vw, 2.2rem);">
+        <span data-en="Prefer a direct conversation?" data-ar="تفضل التواصل المباشر؟">Prefer a direct conversation?</span>
       </h2>
+      <p class="section-lede" style="margin: 1rem auto 0;" data-en="Reach our hospitality team directly — by email, phone, or WhatsApp." data-ar="تواصل مع فريق الضيافة مباشرة — عبر البريد، الهاتف، أو واتساب.">Reach our hospitality team directly — by email, phone, or WhatsApp.</p>
       <div class="contact-bar">
-        <div class="contact-item">
+        <a href="https://wa.me/201065441573?text=Hello%20Blue%2C%20I%27d%20like%20to%20learn%20more%20about%20the%20platform." class="contact-card whatsapp" target="_blank" rel="noopener">
+          <div class="contact-icon" style="color: var(--whatsapp);">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2zm0 1.67c2.21 0 4.28.86 5.84 2.43a8.2 8.2 0 0 1 2.42 5.84c0 4.54-3.7 8.24-8.25 8.24a8.19 8.19 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.15 8.15 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.24-8.25zm-4.7 4.42c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03 0 1.2.88 2.36 1 2.52.12.16 1.71 2.74 4.22 3.73 2.09.82 2.52.66 2.97.62.45-.04 1.45-.59 1.66-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.45-1.35-1.69-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42l-.47-.01z"/></svg>
+          </div>
+          <span class="contact-label" data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+          <span class="contact-value">+20 106 544 1573</span>
+        </a>
+        <a href="mailto:blueguestapp@gmail.com" class="contact-card">
+          <div class="contact-icon">✉️</div>
           <span class="contact-label" data-en="Email" data-ar="البريد الإلكتروني">Email</span>
-          <a href="mailto:blueguestapp@gmail.com" class="contact-value">blueguestapp@gmail.com</a>
-        </div>
-        <div class="contact-item">
+          <span class="contact-value">blueguestapp@gmail.com</span>
+        </a>
+        <a href="tel:+201065441573" class="contact-card">
+          <div class="contact-icon">📞</div>
           <span class="contact-label" data-en="Phone (Egypt)" data-ar="هاتف (مصر)">Phone (Egypt)</span>
-          <a href="tel:+201065441573" class="contact-value">+20 106 544 1573</a>
-        </div>
-        <div class="contact-item">
+          <span class="contact-value">+20 106 544 1573</span>
+        </a>
+        <a href="tel:+201158000253" class="contact-card">
+          <div class="contact-icon">📞</div>
           <span class="contact-label" data-en="Phone (Egypt)" data-ar="هاتف (مصر)">Phone (Egypt)</span>
-          <a href="tel:+201158000253" class="contact-value">+20 115 800 0253</a>
-        </div>
+          <span class="contact-value">+20 115 800 0253</span>
+        </a>
       </div>
     </div>
   </section>
@@ -1082,28 +1489,31 @@
       <p class="footer-brand">BLUE</p>
       <p class="footer-tagline">© 2026 Blue Hotel Experience. All rights reserved.</p>
     </div>
-    <p class="footer-tagline" data-en="Transforming hospitality in MENA — one hotel at a time." data-ar="نحوّل الضيافة في المنطقة — فندقاً تلو الآخر.">Transforming hospitality in MENA — one hotel at a time.</p>
+    <p class="footer-tagline" data-en="The digital operating layer for modern hotels — MENA & beyond." data-ar="الطبقة التشغيلية الرقمية للفنادق الحديثة — في الشرق الأوسط وأبعد.">The digital operating layer for modern hotels — MENA & beyond.</p>
   </footer>
+
+  <!-- ── WHATSAPP FLOAT ── -->
+  <a href="https://wa.me/201065441573?text=Hello%20Blue%2C%20I%27d%20like%20to%20book%20a%20demo." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2zm-4.7 6.09c.16 0 .31.01.47.01.15.01.35-.06.55.42.2.49.69 1.69.75 1.81.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.63 1.04 1.35 1.69.93.83 1.72 1.09 1.96 1.21.24.12.38.1.52-.06.14-.16.61-.72.77-.96.16-.24.33-.2.55-.12.22.08 1.43.68 1.67.8.24.12.4.18.46.28.06.1.06.59-.14 1.16-.21.57-1.21 1.12-1.66 1.16-.45.04-.88.2-2.97-.62-2.51-.99-4.1-3.57-4.22-3.73-.12-.16-1-1.32-1-2.52 0-1.2.63-1.79.85-2.03.22-.24.48-.3.64-.3z"/></svg>
+  </a>
 
   <script>
     /* ── CANVAS ANIMATION ── */
     (function() {
       const canvas = document.getElementById('bg-canvas');
       const ctx = canvas.getContext('2d');
-      let W, H, particles = [], animId;
+      let W, H, particles = [];
 
       function resize() {
         W = canvas.width  = window.innerWidth;
         H = canvas.height = window.innerHeight;
       }
-
       function createParticles() {
         particles = [];
         const count = Math.floor(W / 18);
         for (let i = 0; i < count; i++) {
           particles.push({
-            x: Math.random() * W,
-            y: Math.random() * H,
+            x: Math.random() * W, y: Math.random() * H,
             r: Math.random() * 1.2 + 0.3,
             vx: (Math.random() - 0.5) * 0.18,
             vy: (Math.random() - 0.5) * 0.12,
@@ -1112,69 +1522,44 @@
           });
         }
       }
-
       function drawFrame() {
         ctx.clearRect(0, 0, W, H);
-
-        // Deep gradient background
         const grad = ctx.createLinearGradient(0, 0, W * 0.5, H);
-        grad.addColorStop(0,   '#0a1628');
+        grad.addColorStop(0, '#0a1628');
         grad.addColorStop(0.5, '#0d2240');
-        grad.addColorStop(1,   '#091522');
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, W, H);
+        grad.addColorStop(1, '#091522');
+        ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
 
-        // Subtle glow orbs
         const orb1 = ctx.createRadialGradient(W*0.15, H*0.35, 0, W*0.15, H*0.35, W*0.35);
-        orb1.addColorStop(0, 'rgba(29,90,160,0.18)');
-        orb1.addColorStop(1, 'transparent');
-        ctx.fillStyle = orb1;
-        ctx.fillRect(0, 0, W, H);
-
+        orb1.addColorStop(0, 'rgba(29,90,160,0.18)'); orb1.addColorStop(1, 'transparent');
+        ctx.fillStyle = orb1; ctx.fillRect(0, 0, W, H);
         const orb2 = ctx.createRadialGradient(W*0.85, H*0.6, 0, W*0.85, H*0.6, W*0.3);
-        orb2.addColorStop(0, 'rgba(126,203,207,0.07)');
-        orb2.addColorStop(1, 'transparent');
-        ctx.fillStyle = orb2;
-        ctx.fillRect(0, 0, W, H);
+        orb2.addColorStop(0, 'rgba(126,203,207,0.07)'); orb2.addColorStop(1, 'transparent');
+        ctx.fillStyle = orb2; ctx.fillRect(0, 0, W, H);
 
-        // Particles with connections
         for (let i = 0; i < particles.length; i++) {
           const p = particles[i];
           p.x += p.vx; p.y += p.vy;
-          if (p.x < 0) p.x = W;
-          if (p.x > W) p.x = 0;
-          if (p.y < 0) p.y = H;
-          if (p.y > H) p.y = 0;
-
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = p.color;
-          ctx.globalAlpha = p.alpha;
-          ctx.fill();
-
-          // Connect close particles
+          if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = p.color; ctx.globalAlpha = p.alpha; ctx.fill();
           for (let j = i + 1; j < particles.length; j++) {
             const q = particles[j];
             const dx = p.x - q.x, dy = p.y - q.y;
             const dist = Math.sqrt(dx*dx + dy*dy);
             if (dist < 90) {
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(q.x, q.y);
+              ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
               ctx.strokeStyle = '#2d6db5';
               ctx.globalAlpha = (1 - dist/90) * 0.06;
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
+              ctx.lineWidth = 0.5; ctx.stroke();
             }
           }
         }
         ctx.globalAlpha = 1;
-        animId = requestAnimationFrame(drawFrame);
+        requestAnimationFrame(drawFrame);
       }
-
-      resize();
-      createParticles();
-      drawFrame();
+      resize(); createParticles(); drawFrame();
       window.addEventListener('resize', () => { resize(); createParticles(); });
     })();
 
@@ -1184,89 +1569,70 @@
       navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
 
+    /* ── MOBILE NAV ── */
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    }
+
     /* ── REVEAL ON SCROLL ── */
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
 
     /* ── LANGUAGE TOGGLE ── */
     let isAr = false;
-
     function toggleLang() {
       isAr = !isAr;
-      const html = document.documentElement;
-      const body = document.body;
-
+      const html = document.documentElement, body = document.body;
       if (isAr) {
-        html.lang = 'ar';
-        html.dir  = 'rtl';
+        html.lang = 'ar'; html.dir = 'rtl';
         body.classList.add('ar');
         document.getElementById('langLabel').textContent = 'English';
       } else {
-        html.lang = 'en';
-        html.dir  = 'ltr';
+        html.lang = 'en'; html.dir = 'ltr';
         body.classList.remove('ar');
         document.getElementById('langLabel').textContent = 'عربي';
       }
-
-      // Swap all data-en/data-ar text
       document.querySelectorAll('[data-en]').forEach(el => {
         const txt = isAr ? el.getAttribute('data-ar') : el.getAttribute('data-en');
         if (txt) el.innerHTML = txt;
       });
-
-      // Update select options
       document.querySelectorAll('select option[data-en]').forEach(opt => {
         opt.textContent = isAr
           ? (opt.getAttribute('data-ar') || opt.getAttribute('data-en'))
           : opt.getAttribute('data-en');
       });
-
-      // Update placeholders
-      if (isAr) {
-        document.getElementById('name').placeholder    = 'أحمد محمود';
-        document.getElementById('hotel').placeholder   = 'فندق القصر الكبير';
-        document.getElementById('phone').placeholder   = '+20 1XX XXXX XXXX';
-        document.getElementById('email').placeholder   = 'you@hotel.com';
-        document.getElementById('message').placeholder = 'أخبرنا عن منشأتك أو أي أسئلة لديك...';
-      } else {
-        document.getElementById('name').placeholder    = 'Jane Smith';
-        document.getElementById('hotel').placeholder   = 'Grand Palace Hotel';
-        document.getElementById('phone').placeholder   = '+20 1XX XXXX XXXX';
-        document.getElementById('email').placeholder   = 'you@hotel.com';
-        document.getElementById('message').placeholder = 'Tell us about your property or any specific questions...';
-      }
     }
+    window.toggleLang = toggleLang;
 
-    /* ── FORM SUBMISSION ── */
-    document.getElementById('demoForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const btn  = form.querySelector('button[type="submit"]');
-      btn.textContent = isAr ? 'جاري الإرسال...' : 'Sending...';
-      btn.disabled = true;
-
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          form.style.display = 'none';
-          document.getElementById('formSuccess').classList.add('show');
-        } else {
-          btn.textContent = isAr ? 'حدث خطأ — أعد المحاولة' : 'Error — please try again';
-          btn.disabled = false;
+    /* ── FORM SUBMIT ── */
+    const form = document.getElementById('demoForm');
+    const success = document.getElementById('formSuccess');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST', body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.style.display = 'none';
+            success.classList.add('show');
+          } else {
+            alert(isAr ? 'حدث خطأ. حاول مرة أخرى.' : 'Something went wrong. Please try again.');
+          }
+        } catch (err) {
+          alert(isAr ? 'حدث خطأ. حاول مرة أخرى.' : 'Something went wrong. Please try again.');
         }
-      } catch {
-        btn.textContent = isAr ? 'حدث خطأ — أعد المحاولة' : 'Error — please try again';
-        btn.disabled = false;
-      }
-    });
+      });
+    }
   </script>
 </body>
 </html>
