@@ -6,22 +6,23 @@
   <meta name="theme-color" content="#0a1628" />
 
   <title>Blue — Digital Guest Experience Platform for Hotels & Resorts | MENA</title>
-  <meta name="description" content="Blue is the digital operating layer for modern hotels and resorts. Streamline guest requests, boost service revenue, and elevate guest experience across 20+ hospitality services — in any language." />
-  <meta name="keywords" content="hotel guest experience platform, hospitality SaaS, digital concierge, hotel operations, room service app, multilingual guest chat, MENA hospitality technology, hotel management software" />
+  <meta name="description" content="Blue is the digital operating layer for modern hotels and resorts in the MENA region. Streamline guest requests, eliminate language barriers, boost service revenue, and elevate guest experience across 20+ hospitality services — in any language." />
+  <meta name="keywords" content="hotel guest experience platform, hospitality SaaS MENA, digital concierge, hotel operations software Egypt, room service app, multilingual guest chat, hotel management software Middle East, digital room key, BLE NFC hotel, Blue hotel app" />
   <meta name="author" content="Blue Hotel Experience" />
   <link rel="canonical" href="/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Blue" />
-  <meta property="og:title" content="Blue — The Digital Operating Layer for Modern Hotels" />
-  <meta property="og:description" content="Connect guests, staff, requests and services in one premium platform. Built for hotels and resorts across the MENA region." />
+  <meta property="og:title" content="Blue — The Digital Operating Layer for Modern Hotels | MENA" />
+  <meta property="og:description" content="Connect guests, staff, requests and services in one premium multilingual platform. Purpose-built for hotels and resorts across the MENA region." />
   <meta property="og:url" content="/" />
+  <meta property="og:image" content="/og-image.jpg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Blue — Digital Guest Experience Platform for Hotels" />
-  <meta name="twitter:description" content="Modernize guest experience, streamline operations, and grow service revenue. One platform. Every guest request." />
+  <meta name="twitter:title" content="Blue — Digital Guest Experience Platform for Hotels | MENA" />
+  <meta name="twitter:description" content="Modernize guest experience, eliminate language barriers, and grow service revenue. One platform. Every guest request. Built for MENA hospitality." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,8 +35,10 @@
     "name": "Blue",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web, iOS, Android",
-    "description": "Digital Guest Experience Platform for hotels and resorts. Manage 20+ guest services from one unified, multilingual platform.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "description": "Digital Guest Experience Platform for hotels and resorts in the MENA region. Manage 20+ guest services from one unified multilingual platform.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "areaServed": ["EG", "SA", "AE", "JO", "QA", "BH", "KW", "OM"],
+    "availableLanguage": ["Arabic", "English", "French", "German", "Russian", "Chinese"]
   }
   </script>
 
@@ -44,20 +47,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue-deep:   #0a1628;
-      --blue-mid:    #0d2240;
-      --blue-accent: #1a4a7a;
-      --blue-glow:   #2d6db5;
-      --blue-light:  #5ba3e0;
-      --aqua:        #7ecbcf;
-      --foam:        #c8eaf0;
-      --gold:        #c9a84c;
-      --gold-light:  #e8d08a;
-      --white:       #f5f2ee;
-      --white-dim:   rgba(245,242,238,0.7);
-      --glass:       rgba(255,255,255,0.04);
-      --glass-border:rgba(255,255,255,0.08);
-      --whatsapp:    #25d366;
+      --blue-deep:    #0a1628;
+      --blue-mid:     #0d2240;
+      --blue-accent:  #1a4a7a;
+      --blue-glow:    #2d6db5;
+      --blue-light:   #5ba3e0;
+      --aqua:         #7ecbcf;
+      --foam:         #c8eaf0;
+      --gold:         #c9a84c;
+      --gold-light:   #e8d08a;
+      --white:        #f5f2ee;
+      --white-dim:    rgba(245,242,238,0.7);
+      --glass:        rgba(255,255,255,0.04);
+      --glass-border: rgba(255,255,255,0.08);
+      --whatsapp:     #25d366;
 
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body:    'DM Sans', sans-serif;
@@ -80,7 +83,8 @@
     [lang="ar"] body,
     body.ar { direction: rtl; }
     body.ar .font-display { font-family: var(--font-arabic); letter-spacing: 0; }
-    body.ar p, body.ar li, body.ar label, body.ar input, body.ar textarea, body.ar select,
+    body.ar p, body.ar li, body.ar label, body.ar input,
+    body.ar textarea, body.ar select,
     body.ar .nav-links a, body.ar .footer-tagline {
       font-family: var(--font-arabic);
     }
@@ -96,12 +100,11 @@
       transition: background 0.4s;
     }
     nav.scrolled {
-      background: rgba(10,22,40,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(10,22,40,0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--glass-border);
     }
-
     .nav-logo {
       font-family: var(--font-display);
       font-size: 1.8rem; font-weight: 600;
@@ -113,7 +116,6 @@
       display: inline-block; width: 7px; height: 7px;
       border-radius: 50%; background: var(--aqua); margin-bottom: 2px;
     }
-
     .nav-links {
       display: flex; align-items: center; gap: 2.2rem; list-style: none;
     }
@@ -123,18 +125,15 @@
       text-transform: uppercase; transition: color 0.25s;
     }
     .nav-links a:hover { color: var(--white); }
-
     .nav-right { display: flex; align-items: center; gap: 0.8rem; }
-
     .nav-cta {
       background: var(--gold); color: var(--blue-deep);
-      padding: 0.55rem 1.1rem; border-radius: 0.3rem;
-      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em;
+      padding: 0.55rem 1.3rem; border-radius: 0.3rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
       text-transform: uppercase; text-decoration: none;
       transition: all 0.3s;
     }
-    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
-
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,0.3); }
     .lang-toggle {
       display: flex; align-items: center; gap: 0.4rem; cursor: pointer;
       background: var(--glass); border: 1px solid var(--glass-border);
@@ -143,7 +142,6 @@
       letter-spacing: 0.05em; transition: all 0.25s;
     }
     .lang-toggle:hover { background: rgba(255,255,255,0.08); color: var(--white); }
-
     .mobile-toggle {
       display: none; background: var(--glass); border: 1px solid var(--glass-border);
       width: 38px; height: 38px; border-radius: 0.4rem; cursor: pointer;
@@ -166,7 +164,6 @@
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center; padding: 8rem 2rem 5rem; z-index: 1;
     }
-
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 0.6rem;
       font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
@@ -177,7 +174,6 @@
       content: ''; display: block; width: 28px; height: 1px;
       background: var(--aqua); opacity: 0.5;
     }
-
     .hero-title {
       font-family: var(--font-display);
       font-size: clamp(2.8rem, 8vw, 7rem);
@@ -188,39 +184,34 @@
     }
     body.ar .hero-title { font-family: var(--font-arabic); font-size: clamp(2.4rem, 7vw, 5.5rem); }
     .hero-title em { font-style: italic; color: var(--aqua); }
-
     .hero-subtitle {
       font-family: var(--font-display);
       font-size: clamp(1.15rem, 2.2vw, 1.6rem);
       font-weight: 300; font-style: italic;
-      color: var(--white-dim); margin-bottom: 2rem; max-width: 42ch;
+      color: var(--white-dim); margin-bottom: 2rem; max-width: 48ch;
       opacity: 0; animation: fadeUp 1s 0.7s forwards;
     }
     body.ar .hero-subtitle { font-family: var(--font-arabic); font-style: normal; }
-
     .hero-desc {
       max-width: 56ch; font-size: 1rem; color: var(--white-dim);
       margin-bottom: 2.5rem; opacity: 0; animation: fadeUp 1s 0.9s forwards;
     }
-
     .hero-cta {
       display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
       margin-bottom: 3rem; opacity: 0; animation: fadeUp 1s 1.1s forwards;
     }
-
     .btn-primary {
       background: var(--gold); color: var(--blue-deep);
       padding: 1rem 2.4rem; border-radius: 0.3rem;
-      font-size: 0.85rem; font-weight: 500;
+      font-size: 0.85rem; font-weight: 600;
       letter-spacing: 0.08em; text-transform: uppercase;
       text-decoration: none; border: none; cursor: pointer;
       transition: all 0.3s; display: inline-block;
     }
     .btn-primary:hover {
       background: var(--gold-light); transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(201,168,76,0.25);
+      box-shadow: 0 10px 36px rgba(201,168,76,0.3);
     }
-
     .btn-ghost {
       background: transparent; color: var(--white);
       padding: 1rem 2.4rem; border-radius: 0.3rem;
@@ -233,7 +224,6 @@
       border-color: rgba(255,255,255,0.3); background: var(--glass);
       transform: translateY(-2px);
     }
-
     .hero-trust {
       display: flex; flex-wrap: wrap; justify-content: center;
       gap: 1.2rem 2.4rem; font-size: 0.78rem; color: var(--white-dim);
@@ -247,7 +237,6 @@
       content: ''; width: 5px; height: 5px; border-radius: 50%;
       background: var(--aqua); opacity: 0.8;
     }
-
     .hero-scroll-hint {
       position: absolute; bottom: 1.5rem; left: 50%;
       transform: translateX(-50%);
@@ -262,11 +251,46 @@
       animation: scrollPulse 2s 2s infinite;
     }
 
+    /* ── MENA BANNER ── */
+    #mena-banner {
+      position: relative; z-index: 1;
+      background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(126,203,207,0.05));
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 1.4rem 2rem;
+      text-align: center;
+      overflow: hidden;
+    }
+    #mena-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 80px,
+        rgba(201,168,76,0.03) 80px,
+        rgba(201,168,76,0.03) 81px
+      );
+    }
+    .mena-banner-inner {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem; flex-wrap: wrap;
+      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--white-dim);
+    }
+    .mena-banner-inner strong {
+      color: var(--gold); font-weight: 500; font-size: 0.82rem;
+    }
+    .mena-sep {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: rgba(201,168,76,0.4);
+    }
+
     /* ── SHARED SECTION ── */
     .section { position: relative; z-index: 1; padding: 7rem 2rem; }
     .section-wide { max-width: 1200px; margin: 0 auto; }
     .section-narrow { max-width: 1100px; margin: 0 auto; }
-
     .section-label {
       font-size: 0.7rem; letter-spacing: 0.22em;
       text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem;
@@ -421,8 +445,6 @@
       letter-spacing: 0.1em; text-transform: uppercase;
     }
     .mock-pill.gold { background: rgba(201,168,76,0.18); color: var(--gold-light); }
-
-    /* Variant mocks */
     .mock-tile {
       flex: 1; background: rgba(255,255,255,0.04);
       border: 1px solid var(--glass-border); border-radius: 0.35rem;
@@ -453,7 +475,6 @@
       color: var(--white); font-weight: 400;
     }
     .mock-kpi span { font-size: 0.55rem; color: var(--white-dim); letter-spacing: 0.08em; }
-
     .preview-meta { display: flex; flex-direction: column; gap: 0.4rem; }
     .preview-tag {
       font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
@@ -556,7 +577,6 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 0.7rem; margin-top: 0.15rem;
     }
-
     .translate-demo {
       background: var(--glass); border: 1px solid var(--glass-border);
       border-radius: 1rem; padding: 1.8rem;
@@ -564,13 +584,10 @@
       display: flex; flex-direction: column; gap: 0.9rem;
       position: relative;
     }
-    .translate-row {
-      display: flex; gap: 0.8rem; align-items: flex-start;
-    }
+    .translate-row { display: flex; gap: 0.8rem; align-items: flex-start; }
     .translate-row.right { flex-direction: row-reverse; }
     .translate-bubble {
-      flex: 1; padding: 0.8rem 1rem; border-radius: 0.7rem;
-      font-size: 0.85rem;
+      flex: 1; padding: 0.8rem 1rem; border-radius: 0.7rem; font-size: 0.85rem;
     }
     .translate-bubble.guest {
       background: rgba(126,203,207,0.12);
@@ -602,6 +619,33 @@
       border-radius: 999px; border: 1px solid rgba(126,203,207,0.2);
     }
 
+    /* ── DIFFERENTIATOR SECTION ── */
+    #differentiator {
+      padding: 7rem 2rem;
+      background: linear-gradient(to bottom, transparent, rgba(13,34,64,0.4), transparent);
+    }
+    .diff-inner { max-width: 1100px; margin: 0 auto; }
+    .diff-single-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem; margin-top: 3rem;
+    }
+    .diff-item {
+      padding: 1.4rem 1.6rem; border-radius: 0.7rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .diff-item.positive {
+      background: linear-gradient(135deg, rgba(126,203,207,0.07), rgba(126,203,207,0.02));
+      border: 1px solid rgba(126,203,207,0.2);
+    }
+    .diff-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .diff-icon.yes { background: rgba(126,203,207,0.18); color: var(--aqua); }
+    .diff-text { font-size: 0.9rem; color: var(--white-dim); line-height: 1.5; }
+    .diff-text strong { color: var(--white); font-weight: 500; display: block; margin-bottom: 0.2rem; }
+
     /* ── SERVICE ECOSYSTEM ── */
     #ecosystem {
       background: linear-gradient(to bottom, transparent, rgba(13,34,64,0.5), transparent);
@@ -614,22 +658,18 @@
       background: var(--glass); border: 1px solid var(--glass-border);
       border-radius: 0.7rem; padding: 1.6rem 1.2rem;
       display: flex; flex-direction: column; gap: 0.6rem;
-      transition: all 0.3s; text-align: center;
-      align-items: center;
+      transition: all 0.3s; text-align: center; align-items: center;
     }
     .service-tile:hover {
       transform: translateY(-4px); border-color: rgba(126,203,207,0.35);
       background: rgba(126,203,207,0.04);
     }
-    .service-icon {
-      font-size: 1.6rem; margin-bottom: 0.3rem;
-    }
+    .service-icon { font-size: 1.6rem; margin-bottom: 0.3rem; }
     .service-name {
       font-family: var(--font-display); font-size: 1rem;
       color: var(--white); font-weight: 400;
     }
     body.ar .service-name { font-family: var(--font-arabic); }
-
     .ecosystem-banner {
       margin-top: 3rem; padding: 3rem 2rem; text-align: center;
       border: 1px solid var(--glass-border); border-radius: 1rem;
@@ -648,9 +688,7 @@
     }
 
     /* ── FOR WHOM ── */
-    #audience {
-      padding: 7rem 2rem; text-align: center;
-    }
+    #audience { padding: 7rem 2rem; text-align: center; }
     .audience-inner { max-width: 1000px; margin: 0 auto; }
     .audience-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -675,9 +713,7 @@
 
     /* ── TRUST / DESIGNED FOR ── */
     #trust { padding: 6rem 2rem; }
-    .trust-inner {
-      max-width: 1100px; margin: 0 auto; text-align: center;
-    }
+    .trust-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
     .trust-row {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1.5px; margin-top: 3.5rem;
@@ -699,12 +735,59 @@
     body.ar .trust-label { font-family: var(--font-arabic); }
     .trust-sub { font-size: 0.75rem; color: var(--white-dim); letter-spacing: 0.06em; }
 
+    /* ── BUILT FOR MENA ── */
+    #mena {
+      padding: 7rem 2rem;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06), transparent, rgba(126,203,207,0.04));
+    }
+    .mena-inner { max-width: 1100px; margin: 0 auto; }
+    .mena-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: center;
+    }
+    .mena-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem;
+    }
+    .mena-stat {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: 0.7rem; padding: 1.5rem 1.2rem; text-align: center;
+    }
+    .mena-stat-value {
+      font-family: var(--font-display); font-size: 2.2rem;
+      color: var(--gold); font-weight: 300; line-height: 1;
+    }
+    .mena-stat-label {
+      font-size: 0.75rem; color: var(--white-dim);
+      letter-spacing: 0.06em; margin-top: 0.4rem;
+    }
+    body.ar .mena-stat-label { font-family: var(--font-arabic); letter-spacing: 0; }
+    .mena-points {
+      list-style: none; display: flex; flex-direction: column; gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .mena-points li {
+      display: flex; gap: 0.9rem; font-size: 0.93rem; color: var(--white-dim);
+      align-items: flex-start; line-height: 1.6;
+    }
+    body.ar .mena-points li { flex-direction: row-reverse; text-align: right; }
+    .mena-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0; margin-top: 0.55rem; opacity: 0.8;
+    }
+    .mena-badge {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 0.4rem; padding: 0.6rem 1.2rem; margin-bottom: 2rem;
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold);
+    }
+
     /* ── DEMO FORM ── */
     #demo {
       padding: 7rem 2rem;
       background: linear-gradient(to bottom, transparent, rgba(13,34,64,0.5));
     }
-    .demo-inner { max-width: 720px; margin: 0 auto; }
+    .demo-inner { max-width: 760px; margin: 0 auto; }
     .demo-header { text-align: center; margin-bottom: 3rem; }
     .demo-perks {
       display: flex; flex-wrap: wrap; justify-content: center;
@@ -712,9 +795,7 @@
       font-size: 0.8rem; color: var(--white-dim);
     }
     .demo-perks span { display: inline-flex; align-items: center; gap: 0.4rem; }
-    .demo-perks span::before {
-      content: '✓'; color: var(--aqua); font-size: 0.85rem;
-    }
+    .demo-perks span::before { content: '✓'; color: var(--aqua); font-size: 0.85rem; }
     .form-wrap {
       background: var(--glass); border: 1px solid var(--glass-border);
       border-radius: 1rem; padding: 3rem;
@@ -752,9 +833,8 @@
     }
     select option { background: var(--blue-mid); }
     textarea { resize: vertical; min-height: 100px; }
-
     .form-submit {
-      width: 100%; padding: 1.1rem; font-size: 0.9rem;
+      width: 100%; padding: 1.15rem; font-size: 0.9rem;
       letter-spacing: 0.1em; margin-top: 0.5rem;
     }
     .form-note {
@@ -788,16 +868,13 @@
       border-color: rgba(126,203,207,0.3); transform: translateY(-3px);
       background: rgba(255,255,255,0.05);
     }
-    .contact-card.whatsapp:hover { border-color: var(--whatsapp); }
+    .contact-card.whatsapp:hover { border-color: var(--whatsapp); box-shadow: 0 12px 32px rgba(37,211,102,0.15); }
     .contact-icon { font-size: 1.5rem; }
     .contact-label {
       font-size: 0.7rem; letter-spacing: 0.15em;
       text-transform: uppercase; color: var(--aqua);
     }
-    .contact-value {
-      font-size: 0.95rem; color: var(--white);
-      text-decoration: none; direction: ltr;
-    }
+    .contact-value { font-size: 0.95rem; color: var(--white); text-decoration: none; direction: ltr; }
 
     /* ── WHATSAPP FLOATING ── */
     .wa-float {
@@ -853,9 +930,13 @@
       50% { transform: translateY(-8px); }
     }
     @keyframes pulseRing {
-      0% { box-shadow: 0 8px 28px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.5); }
-      70% { box-shadow: 0 8px 28px rgba(37,211,102,0.4), 0 0 0 16px rgba(37,211,102,0); }
+      0%   { box-shadow: 0 8px 28px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.5); }
+      70%  { box-shadow: 0 8px 28px rgba(37,211,102,0.4), 0 0 0 16px rgba(37,211,102,0); }
       100% { box-shadow: 0 8px 28px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0); }
+    }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .reveal {
@@ -863,6 +944,9 @@
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
 
     /* ── MOBILE ── */
     @media (max-width: 900px) {
@@ -870,7 +954,6 @@
       .nav-links { display: none; }
       .nav-cta { display: none; }
       .mobile-toggle { display: flex; }
-
       .nav-links.open {
         display: flex; position: absolute;
         top: 100%; left: 0; right: 0;
@@ -882,39 +965,38 @@
       }
       .nav-links.open li { padding: 0.85rem 0; border-bottom: 1px solid var(--glass-border); }
       .nav-links.open li:last-child { border-bottom: none; }
-
       #hero { padding: 7rem 1.3rem 4rem; }
       .hero-title { font-size: clamp(2.4rem, 11vw, 4rem); }
       .hero-trust { font-size: 0.72rem; gap: 0.8rem 1.4rem; }
-
       .section { padding: 5rem 1.3rem; }
-      #preview, #multilingual, #ecosystem, #audience, #trust, #demo { padding: 5rem 1.3rem; }
-
+      #preview, #multilingual, #ecosystem, #audience, #trust,
+      #demo, #differentiator, #mena { padding: 5rem 1.3rem; }
       .what-inner { grid-template-columns: 1fr; gap: 3rem; }
       .what-visual { aspect-ratio: 16/10; max-width: 420px; margin: 0 auto; }
-
       .multi-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .mena-grid { grid-template-columns: 1fr; gap: 3rem; }
       .audience-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .form-wrap { padding: 2rem 1.3rem; }
       footer { flex-direction: column; text-align: center; }
-
       .preview-grid, .kpi-grid, .services-grid { gap: 1rem; }
       .ecosystem-banner { padding: 2.2rem 1.3rem; }
       .wa-float { bottom: 1rem; right: 1rem; width: 52px; height: 52px; }
       body.ar .wa-float { left: 1rem; right: auto; }
+      .mena-stats { grid-template-columns: 1fr 1fr; }
     }
-
     @media (max-width: 480px) {
       .hero-cta { flex-direction: column; width: 100%; }
       .hero-cta a { width: 100%; text-align: center; }
       .section-title { font-size: 1.8rem; }
+      .mena-stats { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+      .mena-banner-inner { gap: 1rem; }
+      .mena-sep { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Animated background canvas -->
   <canvas id="bg-canvas"></canvas>
 
   <!-- ── NAVIGATION ── -->
@@ -925,7 +1007,7 @@
       <li><a href="#preview" data-en="Product" data-ar="المنتج">Product</a></li>
       <li><a href="#value" data-en="Why Blue" data-ar="لماذا Blue">Why Blue</a></li>
       <li><a href="#ecosystem" data-en="Services" data-ar="الخدمات">Services</a></li>
-      <li><a href="#audience" data-en="For Hotels" data-ar="للفنادق">For Hotels</a></li>
+      <li><a href="#mena" data-en="MENA" data-ar="الشرق الأوسط">MENA</a></li>
     </ul>
     <div class="nav-right">
       <a href="#demo" class="nav-cta" data-en="Book a Demo" data-ar="احجز عرضاً">Book a Demo</a>
@@ -939,25 +1021,25 @@
   <!-- ── HERO ── -->
   <section id="hero">
     <p class="hero-eyebrow">
-      <span data-en="Digital Guest Experience Platform" data-ar="منصة تجربة الضيف الرقمية">Digital Guest Experience Platform</span>
+      <span data-en="Digital Guest Experience Platform — MENA" data-ar="منصة تجربة الضيف الرقمية — الشرق الأوسط وشمال أفريقيا">Digital Guest Experience Platform — MENA</span>
     </p>
     <h1 class="hero-title font-display">
       <span data-en="The digital operating layer for <em>modern hotels</em>." data-ar="الطبقة التشغيلية الرقمية <em>للفنادق الحديثة</em>.">The digital operating layer for <em>modern hotels</em>.</span>
     </h1>
     <p class="hero-subtitle">
-      <span data-en="One platform to modernize guest experience, streamline operations, and grow service revenue." data-ar="منصة واحدة لتحديث تجربة الضيف، تبسيط العمليات، وزيادة إيرادات الخدمات.">One platform to modernize guest experience, streamline operations, and grow service revenue.</span>
+      <span data-en="One platform to modernize guest experience, eliminate language barriers, and grow service revenue." data-ar="منصة واحدة لتحديث تجربة الضيف، إزالة حواجز اللغة، وزيادة إيرادات الخدمات.">One platform to modernize guest experience, eliminate language barriers, and grow service revenue.</span>
     </p>
     <p class="hero-desc">
-      <span data-en="Blue connects guests, staff, and every hotel service in a single multilingual platform — built for hotels and resorts across the MENA region." data-ar="تربط Blue بين الضيوف، الموظفين، وكل خدمات الفندق في منصة متعددة اللغات — مصممة للفنادق والمنتجعات في منطقة الشرق الأوسط وشمال أفريقيا.">Blue connects guests, staff, and every hotel service in a single multilingual platform — built for hotels and resorts across the MENA region.</span>
+      <span data-en="Blue connects guests, staff, and every hotel service in a single multilingual platform — purpose-built for hotels and resorts across the MENA region." data-ar="تربط Blue بين الضيوف والموظفين وكل خدمات الفندق في منصة موحّدة متعددة اللغات — مصممة خصيصاً للفنادق والمنتجعات في منطقة الشرق الأوسط وشمال أفريقيا.">Blue connects guests, staff, and every hotel service in a single multilingual platform — purpose-built for hotels and resorts across the MENA region.</span>
     </p>
     <div class="hero-cta">
-      <a href="#demo" class="btn-primary" data-en="Book a Demo" data-ar="احجز عرضاً">Book a Demo</a>
+      <a href="#demo" class="btn-primary" data-en="Book a Live Demo" data-ar="احجز عرضاً حياً">Book a Live Demo</a>
       <a href="#preview" class="btn-ghost" data-en="See the Platform" data-ar="استكشف المنصة">See the Platform</a>
     </div>
     <div class="hero-trust">
       <span data-en="Built for Hotels & Resorts" data-ar="مصممة للفنادق والمنتجعات">Built for Hotels & Resorts</span>
+      <span data-en="MENA-Native Platform" data-ar="منصة مبنية للمنطقة">MENA-Native Platform</span>
       <span data-en="Multilingual by Design" data-ar="متعددة اللغات بطبيعتها">Multilingual by Design</span>
-      <span data-en="White-Label Branded" data-ar="بعلامتك التجارية">White-Label Branded</span>
       <span data-en="Works Alongside Your PMS" data-ar="تعمل مع نظامك الحالي">Works Alongside Your PMS</span>
     </div>
     <div class="hero-scroll-hint">
@@ -966,6 +1048,19 @@
     </div>
   </section>
 
+  <!-- ── MENA TRUST BANNER ── -->
+  <div id="mena-banner">
+    <div class="mena-banner-inner">
+      <strong data-en="Built for MENA. Not Adapted for It." data-ar="مبنية للمنطقة. لم تُكيَّف لها.">Built for MENA. Not Adapted for It.</strong>
+      <div class="mena-sep"></div>
+      <span data-en="Arabic-first interface" data-ar="واجهة عربية أصلية">Arabic-first interface</span>
+      <div class="mena-sep"></div>
+      <span data-en="Egypt · Red Sea · Gulf" data-ar="مصر · البحر الأحمر · الخليج">Egypt · Red Sea · Gulf</span>
+      <div class="mena-sep"></div>
+      <span data-en="20+ Guest Services" data-ar="أكثر من 20 خدمة">20+ Guest Services</span>
+    </div>
+  </div>
+
   <!-- ── PROBLEM ── -->
   <section id="problem" class="section section-narrow">
     <div class="reveal">
@@ -973,7 +1068,7 @@
       <h2 class="section-title font-display">
         <span data-en="Hotels still run on phone calls<br>and printed menus." data-ar="الفنادق لا تزال تعمل بالمكالمات الهاتفية<br>والقوائم الورقية.">Hotels still run on phone calls<br>and printed menus.</span>
       </h2>
-      <p class="section-lede" data-en="Guests expect Uber-grade convenience. Hotel operations still rely on switchboards, paper forms, and disconnected departments — losing revenue and goodwill every shift." data-ar="يتوقع الضيوف تجربة بسلاسة تطبيقات اليوم. لكن العمليات الفندقية لا تزال تعتمد على الهاتف، الورق، وأقسام غير مترابطة — تخسر الإيرادات ورضا الضيوف في كل وردية.">Guests expect Uber-grade convenience. Hotel operations still rely on switchboards, paper forms, and disconnected departments — losing revenue and goodwill every shift.</p>
+      <p class="section-lede" data-en="Guests expect Uber-grade convenience. Hotel operations still rely on switchboards, paper forms, and disconnected departments — losing revenue and goodwill every shift." data-ar="يتوقع الضيوف تجربة بسلاسة تطبيقات اليوم. لكن العمليات الفندقية لا تزال تعتمد على الهاتف والورق والأقسام غير المترابطة — تخسر الإيرادات ورضا الضيوف في كل وردية.">Guests expect Uber-grade convenience. Hotel operations still rely on switchboards, paper forms, and disconnected departments — losing revenue and goodwill every shift.</p>
     </div>
     <div class="pain-grid reveal">
       <div class="pain-item">
@@ -992,9 +1087,9 @@
         <p class="pain-text" data-en="Guests don't discover services they would have gladly paid for." data-ar="الضيوف لا يكتشفون الخدمات التي كانوا سيدفعون مقابلها بسرور.">Guests don't discover services they would have gladly paid for.</p>
       </div>
       <div class="pain-item">
-        <div class="pain-icon">📊</div>
-        <p class="pain-title" data-en="No Operational Visibility" data-ar="غياب الرؤية التشغيلية">No Operational Visibility</p>
-        <p class="pain-text" data-en="Managers fly blind: no live data on requests, response times, or guest satisfaction." data-ar="المدراء بلا رؤية واضحة: لا بيانات حية عن الطلبات، أوقات الاستجابة، أو رضا الضيوف.">Managers fly blind: no live data on requests, response times, or guest satisfaction.</p>
+        <div class="pain-icon">🌍</div>
+        <p class="pain-title" data-en="Language Barriers" data-ar="حواجز اللغة">Language Barriers</p>
+        <p class="pain-text" data-en="International guests struggle to communicate. Staff misunderstand. Service suffers." data-ar="الضيوف الدوليون يعانون من التواصل. الموظفون يُسيئون الفهم. الخدمة تتأثر.">International guests struggle to communicate. Staff misunderstand. Service suffers.</p>
       </div>
     </div>
   </section>
@@ -1033,10 +1128,10 @@
           <span data-en="Your hotel's digital layer.<br>Already there." data-ar="الطبقة الرقمية لفندقك.<br>جاهزة دائماً.">Your hotel's digital layer.<br>Already there.</span>
         </h2>
         <p class="section-lede" data-en="Blue connects guests, staff, and every hotel service into one unified system — accessible to guests through their phone, in their language, at any hour." data-ar="تربط Blue بين الضيوف والموظفين وكل خدمات الفندق في نظام موحّد — يصل إليه الضيف من هاتفه، بلغته، في أي وقت.">Blue connects guests, staff, and every hotel service into one unified system — accessible to guests through their phone, in their language, at any hour.</p>
-        <div class="divider" style="margin: 1.5rem 0;"></div>
+        <div class="divider" style="margin:1.5rem 0;"></div>
         <ul class="what-list">
           <li data-en="Sits parallel to your existing PMS — no replacement needed" data-ar="تعمل بجانب نظامك الحالي — دون استبدال.">Sits parallel to your existing PMS — no replacement needed</li>
-          <li data-en="White-labeled with your brand, colors and tone" data-ar="بعلامتك التجارية وألوانك وهويتك الكاملة.">White-labeled with your brand, colors and tone</li>
+          <li data-en="Blue is your hotel's own platform — guests experience it as part of your brand" data-ar="Blue هي منصة فندقك الخاصة — يختبرها الضيف كجزء من علامتك.">Blue is your hotel's own platform — guests experience it as part of your brand</li>
           <li data-en="Live in weeks, not months — without disrupting operations" data-ar="جاهزة خلال أسابيع، دون تعطيل العمليات.">Live in weeks, not months — without disrupting operations</li>
           <li data-en="One dashboard for every department, every request, every guest" data-ar="لوحة تحكم واحدة لكل قسم، كل طلب، كل ضيف.">One dashboard for every department, every request, every guest</li>
         </ul>
@@ -1054,7 +1149,6 @@
         </h2>
         <p class="section-lede" data-en="Four surfaces. One operating layer. Built for the way guests, staff, and managers actually work." data-ar="أربع واجهات. طبقة تشغيل واحدة. مصممة لطريقة عمل الضيوف، الموظفين، والإدارة فعلياً.">Four surfaces. One operating layer. Built for the way guests, staff, and managers actually work.</p>
       </div>
-
       <div class="preview-grid">
 
         <!-- 1. Guest Mobile App -->
@@ -1065,9 +1159,9 @@
               <div class="dots"><i></i><i></i><i></i></div>
             </div>
             <div class="mock-row"><div class="mock-avatar"></div><div class="mock-line"></div><span class="mock-pill">Open</span></div>
-            <div class="mock-row"><div class="mock-avatar gold"></div><div class="mock-line short"></div><span class="mock-pill gold">Spa</span></div>
-            <div class="mock-row"><div class="mock-avatar"></div><div class="mock-line"></div><span class="mock-pill">24/7</span></div>
-            <div style="display:flex; gap:0.4rem; margin-top:auto;">
+            <div class="mock-row"><div class="mock-avatar gold"></div><div class="mock-line"></div><span class="mock-pill gold">Spa</span></div>
+            <div class="mock-row"><div class="mock-avatar"></div><div class="mock-line short"></div><span class="mock-pill">24/7</span></div>
+            <div style="display:flex;gap:0.4rem;margin-top:auto;">
               <div class="mock-tile"><div class="mock-line aqua"></div><div class="mock-line short"></div></div>
               <div class="mock-tile"><div class="mock-line"></div><div class="mock-line short"></div></div>
               <div class="mock-tile"><div class="mock-line"></div><div class="mock-line short"></div></div>
@@ -1113,7 +1207,7 @@
             <div class="mock-bubble out"><div class="mock-line aqua" style="width:90px;"></div></div>
             <div class="mock-bubble in"><div class="mock-avatar" style="width:14px;height:14px;"></div><div class="mock-line" style="width:60px;"></div></div>
             <div class="mock-bubble out"><div class="mock-line aqua" style="width:70px;"></div></div>
-            <div style="display:flex; align-items:center; gap:0.4rem; margin-top:auto; padding:0.4rem 0.5rem; border:1px solid var(--glass-border); border-radius:0.35rem;">
+            <div style="display:flex;align-items:center;gap:0.4rem;margin-top:auto;padding:0.4rem 0.5rem;border:1px solid var(--glass-border);border-radius:0.35rem;">
               <span class="mock-pill" data-en="AR → EN" data-ar="AR → EN">AR → EN</span>
               <div class="mock-line short"></div>
             </div>
@@ -1132,14 +1226,14 @@
               <span>OPS DASHBOARD</span>
               <div class="dots"><i></i><i></i><i></i></div>
             </div>
-            <div style="display:flex; gap:0.4rem;">
+            <div style="display:flex;gap:0.4rem;">
               <div class="mock-kpi" style="flex:1;"><div><span>OPEN</span><br><strong>14</strong></div></div>
               <div class="mock-kpi" style="flex:1;"><div><span>AVG</span><br><strong>3.2m</strong></div></div>
               <div class="mock-kpi" style="flex:1;"><div><span>CSAT</span><br><strong>4.8</strong></div></div>
             </div>
-            <div style="padding:0.5rem 0.6rem; background:rgba(255,255,255,0.03); border:1px solid var(--glass-border); border-radius:0.35rem;">
+            <div style="padding:0.5rem 0.6rem;background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);border-radius:0.35rem;">
               <div class="mock-bar"></div>
-              <div style="display:flex; justify-content:space-between; margin-top:0.4rem; font-size:0.55rem; color:var(--white-dim); letter-spacing:0.08em;">
+              <div style="display:flex;justify-content:space-between;margin-top:0.4rem;font-size:0.55rem;color:var(--white-dim);letter-spacing:0.08em;">
                 <span>HOUSEKEEPING</span><span>65%</span>
               </div>
             </div>
@@ -1176,7 +1270,7 @@
         <div class="feature-num">02</div>
         <div class="feature-icon">🌐</div>
         <h3 class="feature-title" data-en="Multilingual by Default" data-ar="متعددة اللغات افتراضياً">Multilingual by Default</h3>
-        <p class="feature-text" data-en="Arabic, English, French, German, Russian, and more — with live translation between guests and staff." data-ar="عربية، إنجليزية، فرنسية، ألمانية، روسية، والمزيد — مع ترجمة حيّة بين الضيف والموظف.">Arabic, English, French, German, Russian, and more — with live translation between guests and staff.</p>
+        <p class="feature-text" data-en="Arabic, English, French, German, Russian, and more — with live AI translation between guests and staff." data-ar="عربية، إنجليزية، فرنسية، ألمانية، روسية، والمزيد — مع ترجمة ذكاء اصطناعي حيّة بين الضيف والموظف.">Arabic, English, French, German, Russian, and more — with live AI translation between guests and staff.</p>
       </div>
       <div class="feature-card">
         <div class="feature-num">03</div>
@@ -1186,9 +1280,9 @@
       </div>
       <div class="feature-card">
         <div class="feature-num">04</div>
-        <div class="feature-icon">💎</div>
-        <h3 class="feature-title" data-en="White-Label Branding" data-ar="بعلامتك الكاملة">White-Label Branding</h3>
-        <p class="feature-text" data-en="Your colors, your logo, your tone. Guests see your brand — Blue stays invisible." data-ar="ألوانك، شعارك، أسلوبك. الضيف يرى علامتك — وBlue تبقى غير مرئية.">Your colors, your logo, your tone. Guests see your brand — Blue stays invisible.</p>
+        <div class="feature-icon">🔑</div>
+        <h3 class="feature-title" data-en="Digital Room Key" data-ar="مفتاح الغرفة الرقمي">Digital Room Key</h3>
+        <p class="feature-text" data-en="BLE/NFC keyless entry for premium properties — no plastic cards, no front-desk queues, no friction on arrival." data-ar="دخول بتقنية BLE/NFC للفنادق الراقية — بدون بطاقات بلاستيكية أو طوابير أو احتكاك لحظة الوصول.">BLE/NFC keyless entry for premium properties — no plastic cards, no front-desk queues, no friction on arrival.</p>
       </div>
       <div class="feature-card">
         <div class="feature-num">05</div>
@@ -1262,11 +1356,11 @@
         <ul class="multi-points">
           <li><span class="multi-check">✓</span><span data-en="Guests message in their own language — Arabic, English, French, German, Russian, Chinese and more." data-ar="الضيوف يتواصلون بلغتهم — العربية، الإنجليزية، الفرنسية، الألمانية، الروسية، الصينية وغيرها.">Guests message in their own language — Arabic, English, French, German, Russian, Chinese and more.</span></li>
           <li><span class="multi-check">✓</span><span data-en="Staff read and reply in their native language — no second-guessing meaning." data-ar="الموظفون يقرأون ويردّون بلغتهم الأم — دون قلق من الفهم.">Staff read and reply in their native language — no second-guessing meaning.</span></li>
-          <li><span class="multi-check">✓</span><span data-en="Blue translates both sides instantly with hospitality-tuned models." data-ar="Blue تترجم الطرفين فورياً عبر نماذج مُحسَّنة للضيافة.">Blue translates both sides instantly with hospitality-tuned models.</span></li>
+          <li><span class="multi-check">✓</span><span data-en="Blue translates both sides instantly with hospitality-tuned AI models." data-ar="Blue تترجم الطرفين فورياً عبر نماذج ذكاء اصطناعي مُحسَّنة للضيافة.">Blue translates both sides instantly with hospitality-tuned AI models.</span></li>
           <li><span class="multi-check">✓</span><span data-en="Faster service. Fewer mistakes. International guests who feel genuinely at home." data-ar="خدمة أسرع. أخطاء أقل. ضيوف دوليون يشعرون بأنهم في بيتهم.">Faster service. Fewer mistakes. International guests who feel genuinely at home.</span></li>
+          <li><span class="multi-check">✓</span><span data-en="Supports Arabic right-to-left layout natively — not as an afterthought." data-ar="يدعم تخطيط العربية من اليمين لليسار بشكل أصيل — وليس كإضافة لاحقة.">Supports Arabic right-to-left layout natively — not as an afterthought.</span></li>
         </ul>
       </div>
-
       <div class="translate-demo reveal">
         <div class="translate-row">
           <div class="translate-bubble guest">
@@ -1275,14 +1369,72 @@
             <div class="translate-translation" data-en="↳ Can I have breakfast in the room at 8am?" data-ar="↳ Can I have breakfast in the room at 8am?">↳ Can I have breakfast in the room at 8am?</div>
           </div>
         </div>
-
-        <span class="translate-pill" data-en="Auto-translated by Blue" data-ar="ترجمة تلقائية عبر Blue">Auto-translated by Blue</span>
-
+        <span class="translate-pill" data-en="Auto-translated by Blue AI" data-ar="ترجمة تلقائية عبر Blue AI">Auto-translated by Blue AI</span>
         <div class="translate-row right">
           <div class="translate-bubble staff">
             <div class="translate-meta" style="justify-content:flex-end;"><span data-en="Staff · English" data-ar="الموظف · الإنجليزية">Staff · English</span><span class="translate-flag">🇬🇧</span></div>
-            <div style="font-size:0.92rem; color:var(--white);">Of course — your breakfast will be served at 8:00 sharp.</div>
-            <div class="translate-translation" style="direction:rtl; font-family:var(--font-arabic);">↳ بالتأكيد — سيُقدَّم إفطارك تماماً في الثامنة.</div>
+            <div style="font-size:0.92rem;color:var(--white);">Of course — your breakfast will be served at 8:00 sharp.</div>
+            <div class="translate-translation" style="direction:rtl;font-family:var(--font-arabic);">↳ بالتأكيد — سيُقدَّم إفطارك تماماً في الثامنة.</div>
+          </div>
+        </div>
+        <div style="padding:0.8rem 1rem;background:rgba(255,255,255,0.02);border:1px solid var(--glass-border);border-radius:0.5rem;text-align:center;">
+          <p style="font-size:0.7rem;letter-spacing:0.12em;color:var(--white-dim);text-transform:uppercase;" data-en="Also supports: 🇫🇷 FR · 🇩🇪 DE · 🇷🇺 RU · 🇨🇳 ZH · 🇮🇹 IT" data-ar="يدعم أيضاً: 🇫🇷 FR · 🇩🇪 DE · 🇷🇺 RU · 🇨🇳 ZH · 🇮🇹 IT">Also supports: 🇫🇷 FR · 🇩🇪 DE · 🇷🇺 RU · 🇨🇳 ZH · 🇮🇹 IT</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY BLUE ── -->
+  <section id="differentiator">
+    <div class="diff-inner">
+      <div class="section-header reveal">
+        <p class="section-label" data-en="The Blue Difference" data-ar="ما يميز Blue">The Blue Difference</p>
+        <h2 class="section-title font-display">
+          <span data-en="Not just another hotel app." data-ar="ليست مجرد تطبيق فندقي آخر.">Not just another hotel app.</span>
+        </h2>
+        <p class="section-lede" data-en="Blue is built for MENA from the ground up — with the language, culture, and operational reality of your market baked in from day one." data-ar="Blue مبنية للمنطقة من الأساس — باللغة والثقافة والواقع التشغيلي لسوقك منذ اليوم الأول.">Blue is built for MENA from the ground up — with the language, culture, and operational reality of your market baked in from day one.</p>
+      </div>
+      <div class="diff-single-grid reveal">
+        <div class="diff-item positive">
+          <div class="diff-icon yes">✓</div>
+          <div class="diff-text">
+            <strong data-en="MENA-native Arabic interface" data-ar="واجهة عربية أصيلة للمنطقة">MENA-native Arabic interface</strong>
+            <span data-en="Built RTL-first, not translated. Arabic feels natural, not forced." data-ar="مبنية من اليمين لليسار أصلاً، وليست مُترجَمة. العربية طبيعية وأصيلة.">Built RTL-first, not translated. Arabic feels natural, not forced.</span>
+          </div>
+        </div>
+        <div class="diff-item positive">
+          <div class="diff-icon yes">✓</div>
+          <div class="diff-text">
+            <strong data-en="AI-powered real-time translation" data-ar="ترجمة فورية بالذكاء الاصطناعي">AI-powered real-time translation</strong>
+            <span data-en="Hospitality-tuned AI models bridge every language gap between guests and staff instantly." data-ar="نماذج ذكاء اصطناعي مُحسَّنة للضيافة تسد كل فجوة لغوية بين الضيوف والموظفين فورياً.">Hospitality-tuned AI models bridge every language gap between guests and staff instantly.</span>
+          </div>
+        </div>
+        <div class="diff-item positive">
+          <div class="diff-icon yes">✓</div>
+          <div class="diff-text">
+            <strong data-en="Digital room key (BLE/NFC)" data-ar="مفتاح غرفة رقمي (BLE/NFC)">Digital room key (BLE/NFC)</strong>
+            <span data-en="Premium keyless entry — guests unlock their room directly from their phone." data-ar="دخول بدون مفتاح — الضيوف يفتحون غرفهم مباشرة من هواتفهم.">Premium keyless entry — guests unlock their room directly from their phone.</span>
+          </div>
+        </div>
+        <div class="diff-item positive">
+          <div class="diff-icon yes">✓</div>
+          <div class="diff-text">
+            <strong data-en="Works live in weeks, not months" data-ar="جاهزة في أسابيع، لا أشهر">Works live in weeks, not months</strong>
+            <span data-en="Quick onboarding designed for MENA hotels — no lengthy enterprise implementation." data-ar="إعداد سريع مصمم لفنادق المنطقة — بدون عملية مؤسسية طويلة.">Quick onboarding designed for MENA hotels — no lengthy enterprise implementation.</span>
+          </div>
+        </div>
+        <div class="diff-item positive">
+          <div class="diff-icon yes">✓</div>
+          <div class="diff-text">
+            <strong data-en="20+ services in one unified platform" data-ar="أكثر من 20 خدمة في منصة موحّدة">20+ services in one unified platform</strong>
+            <span data-en="From room service to spa to transfers — every guest touchpoint connected in one place." data-ar="من خدمة الغرف إلى السبا إلى النقل — كل نقاط تواصل الضيف في مكان واحد.">From room service to spa to transfers — every guest touchpoint connected in one place.</span>
+          </div>
+        </div>
+        <div class="diff-item positive">
+          <div class="diff-icon yes">✓</div>
+          <div class="diff-text">
+            <strong data-en="Local team. Local support." data-ar="فريق محلي. دعم محلي.">Local team. Local support.</strong>
+            <span data-en="Based in the region, available in your timezone, speaking your language." data-ar="متواجدون في المنطقة، متاحون في توقيتك، يتكلمون لغتك.">Based in the region, available in your timezone, speaking your language.</span>
           </div>
         </div>
       </div>
@@ -1299,7 +1451,6 @@
         </h2>
         <p class="section-lede" data-en="From housekeeping to spa bookings, Blue unifies every guest-facing service under one branded experience." data-ar="من خدمة الغرف إلى حجوزات السبا، توحّد Blue كل الخدمات تحت تجربة واحدة بعلامتك.">From housekeeping to spa bookings, Blue unifies every guest-facing service under one branded experience.</p>
       </div>
-
       <div class="services-grid reveal">
         <div class="service-tile"><div class="service-icon">🍽️</div><span class="service-name" data-en="Room Service" data-ar="خدمة الغرف">Room Service</span></div>
         <div class="service-tile"><div class="service-icon">🛏️</div><span class="service-name" data-en="Housekeeping" data-ar="التدبير الفندقي">Housekeeping</span></div>
@@ -1310,7 +1461,6 @@
         <div class="service-tile"><div class="service-icon">🚗</div><span class="service-name" data-en="Airport Transfers" data-ar="نقل المطار">Airport Transfers</span></div>
         <div class="service-tile"><div class="service-icon">💬</div><span class="service-name" data-en="Guest Support" data-ar="دعم الضيوف">Guest Support</span></div>
       </div>
-
       <div class="ecosystem-banner reveal">
         <h3>
           <span data-en="Manage <em>20+ hospitality services</em><br>from one unified experience." data-ar="إدارة <em>أكثر من 20 خدمة فندقية</em><br>من تجربة موحّدة واحدة.">Manage <em>20+ hospitality services</em><br>from one unified experience.</span>
@@ -1320,30 +1470,43 @@
     </div>
   </section>
 
-  <!-- ── FOR WHOM ── -->
-  <section id="audience">
-    <div class="audience-inner">
-      <div class="reveal">
-        <p class="section-label" data-en="Built For" data-ar="مصممة لـ">Built For</p>
+  <!-- ── BUILT FOR MENA ── -->
+  <section id="mena">
+    <div class="mena-inner section-narrow">
+      <div class="section-header reveal">
+        <p class="section-label" data-en="Purpose-Built for the Region" data-ar="مبنية خصيصاً للمنطقة">Purpose-Built for the Region</p>
         <h2 class="section-title font-display">
-          <span data-en="Made for properties that<br>compete on experience." data-ar="مصممة للفنادق التي<br>تتنافس على التجربة.">Made for properties that<br>compete on experience.</span>
+          <span data-en="The MENA hospitality market<br>deserves a MENA platform." data-ar="سوق الضيافة في الشرق الأوسط<br>يستحق منصة من المنطقة.">The MENA hospitality market<br>deserves a MENA platform.</span>
         </h2>
+        <p class="section-lede" data-en="Blue is the only guest experience platform designed from the ground up for the realities of hospitality in Egypt, the Red Sea coast, and across the Gulf." data-ar="Blue هي المنصة الوحيدة لتجربة الضيف المصممة من الأساس لواقع الضيافة في مصر، ساحل البحر الأحمر، وعبر الخليج.">Blue is the only guest experience platform designed from the ground up for the realities of hospitality in Egypt, the Red Sea coast, and across the Gulf.</p>
       </div>
-      <div class="audience-grid">
-        <div class="audience-card reveal">
-          <div class="audience-icon">🏨</div>
-          <h3 class="audience-title" data-en="Luxury Hotels" data-ar="فنادق فاخرة">Luxury Hotels</h3>
-          <p class="audience-text" data-en="4 & 5-star properties protecting brand standards and elevating every guest touchpoint." data-ar="فنادق 4 و5 نجوم تحافظ على معايير علامتها وترتقي بكل نقطة تواصل.">4 & 5-star properties protecting brand standards and elevating every guest touchpoint.</p>
+      <div class="mena-grid reveal">
+        <div>
+          <ul class="mena-points">
+            <li><span class="mena-dot"></span><span data-en="Arabic-first interface — not translated, natively designed." data-ar="واجهة عربية أصيلة — مصممة أصلاً، وليست مُترجَمة.">Arabic-first interface — not translated, natively designed.</span></li>
+            <li><span class="mena-dot"></span><span data-en="Understands the guest mix of MENA: Arab, European, Russian, Asian travelers." data-ar="تفهم تنوع ضيوف المنطقة: عرب، أوروبيون، روس، آسيويون.">Understands the guest mix of MENA: Arab, European, Russian, Asian travelers.</span></li>
+            <li><span class="mena-dot"></span><span data-en="Built for Red Sea resort complexity — sprawling properties, multi-activity guests." data-ar="مبنية لتعقيد منتجعات البحر الأحمر — فنادق شاسعة وضيوف متعددو الأنشطة.">Built for Red Sea resort complexity — sprawling properties, multi-activity guests.</span></li>
+            <li><span class="mena-dot"></span><span data-en="Supports the high-volume, high-expectation travel seasons of MENA hospitality." data-ar="تدعم مواسم السفر عالية الكثافة وعالية التوقعات في ضيافة المنطقة.">Supports the high-volume, high-expectation travel seasons of MENA hospitality.</span></li>
+            <li><span class="mena-dot"></span><span data-en="Local team. Local support. Local understanding." data-ar="فريق محلي. دعم محلي. فهم محلي.">Local team. Local support. Local understanding.</span></li>
+          </ul>
         </div>
-        <div class="audience-card reveal">
-          <div class="audience-icon">🌴</div>
-          <h3 class="audience-title" data-en="Resorts" data-ar="منتجعات">Resorts</h3>
-          <p class="audience-text" data-en="Sprawling properties where guests can't always reach reception — and shouldn't have to." data-ar="منتجعات شاسعة حيث لا يستطيع الضيف الوصول للاستقبال دائماً — ولا ينبغي أن يضطر.">Sprawling properties where guests can't always reach reception — and shouldn't have to.</p>
-        </div>
-        <div class="audience-card reveal">
-          <div class="audience-icon">🏢</div>
-          <h3 class="audience-title" data-en="Hotel Groups" data-ar="مجموعات فندقية">Hotel Groups</h3>
-          <p class="audience-text" data-en="Multi-property operators standardizing guest experience and operations across portfolios." data-ar="مشغّلو فنادق متعددة يوحّدون تجربة الضيف والعمليات عبر محفظتهم.">Multi-property operators standardizing guest experience and operations across portfolios.</p>
+        <div class="mena-stats">
+          <div class="mena-stat">
+            <div class="mena-stat-value">$820B</div>
+            <div class="mena-stat-label" data-en="Global hospitality market" data-ar="سوق الضيافة العالمي">Global hospitality market</div>
+          </div>
+          <div class="mena-stat">
+            <div class="mena-stat-value">20+</div>
+            <div class="mena-stat-label" data-en="Guest services unified" data-ar="خدمة موحّدة للضيوف">Guest services unified</div>
+          </div>
+          <div class="mena-stat">
+            <div class="mena-stat-value">10+</div>
+            <div class="mena-stat-label" data-en="Languages supported" data-ar="لغة مدعومة">Languages supported</div>
+          </div>
+          <div class="mena-stat">
+            <div class="mena-stat-value">24/7</div>
+            <div class="mena-stat-label" data-en="Guest service availability" data-ar="توفر خدمة الضيوف">Guest service availability</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1352,17 +1515,37 @@
   <!-- ── TRUST ── -->
   <section id="trust">
     <div class="trust-inner reveal">
-      <p class="section-label" data-en="Designed For" data-ar="مصممة لـ">Designed For</p>
+      <p class="section-label" data-en="Who It's For" data-ar="لمن هي">Who It's For</p>
       <h2 class="section-title font-display">
-        <span data-en="Built for modern hospitality operations." data-ar="مصممة لعمليات الضيافة الحديثة.">Built for modern hospitality operations.</span>
+        <span data-en="Built for properties that compete on experience." data-ar="مصممة للفنادق التي تتنافس على التجربة.">Built for properties that compete on experience.</span>
       </h2>
       <p class="section-lede" style="margin:0 auto;" data-en="Blue is purpose-built for the demands of premium properties operating in international, multilingual, high-volume environments." data-ar="Blue مصممة خصيصاً لمتطلبات الفنادق الراقية التي تعمل في بيئات دولية، متعددة اللغات، وعالية الكثافة.">Blue is purpose-built for the demands of premium properties operating in international, multilingual, high-volume environments.</p>
       <div class="trust-row">
-        <div class="trust-cell"><div class="trust-icon">🏨</div><span class="trust-label" data-en="Hotels" data-ar="فنادق">Hotels</span></div>
-        <div class="trust-cell"><div class="trust-icon">🌴</div><span class="trust-label" data-en="Resorts" data-ar="منتجعات">Resorts</span></div>
-        <div class="trust-cell"><div class="trust-icon">💎</div><span class="trust-label" data-en="Luxury Properties" data-ar="فنادق فاخرة">Luxury Properties</span></div>
-        <div class="trust-cell"><div class="trust-icon">🌐</div><span class="trust-label" data-en="Multi-Language Ops" data-ar="عمليات متعددة اللغات">Multi-Language Ops</span></div>
-        <div class="trust-cell"><div class="trust-icon">📈</div><span class="trust-label" data-en="High-Volume Stays" data-ar="إقامات عالية الكثافة">High-Volume Stays</span></div>
+        <div class="trust-cell">
+          <div class="trust-icon">🏨</div>
+          <span class="trust-label" data-en="Hotels" data-ar="فنادق">Hotels</span>
+          <span class="trust-sub" data-en="4 & 5 star" data-ar="4 و5 نجوم">4 & 5 star</span>
+        </div>
+        <div class="trust-cell">
+          <div class="trust-icon">🌴</div>
+          <span class="trust-label" data-en="Resorts" data-ar="منتجعات">Resorts</span>
+          <span class="trust-sub" data-en="Luxury & boutique" data-ar="فاخرة وبوتيك">Luxury & boutique</span>
+        </div>
+        <div class="trust-cell">
+          <div class="trust-icon">💎</div>
+          <span class="trust-label" data-en="Luxury Properties" data-ar="فنادق فاخرة">Luxury Properties</span>
+          <span class="trust-sub" data-en="Premium standards" data-ar="معايير راقية">Premium standards</span>
+        </div>
+        <div class="trust-cell">
+          <div class="trust-icon">🌐</div>
+          <span class="trust-label" data-en="Multi-Language Ops" data-ar="عمليات متعددة اللغات">Multi-Language Ops</span>
+          <span class="trust-sub" data-en="International guests" data-ar="ضيوف دوليون">International guests</span>
+        </div>
+        <div class="trust-cell">
+          <div class="trust-icon">📈</div>
+          <span class="trust-label" data-en="High-Volume Stays" data-ar="إقامات عالية الكثافة">High-Volume Stays</span>
+          <span class="trust-sub" data-en="Peak season ready" data-ar="جاهز للموسم">Peak season ready</span>
+        </div>
       </div>
     </div>
   </section>
@@ -1375,11 +1558,12 @@
         <h2 class="section-title font-display">
           <span data-en="See Blue running on your property." data-ar="شاهد Blue تعمل في فندقك.">See Blue running on your property.</span>
         </h2>
-        <p class="section-lede" style="margin: 0 auto;" data-en="A 30-minute live walkthrough tailored to your property, brand and guest profile." data-ar="جلسة حيّة لمدة 30 دقيقة مُخصصة لفندقك، علامتك، وملف ضيوفك.">A 30-minute live walkthrough tailored to your property, brand and guest profile.</p>
+        <p class="section-lede" style="margin:0 auto;" data-en="A 30-minute live walkthrough tailored to your property, brand, and guest profile. No commitment required." data-ar="جلسة حيّة لمدة 30 دقيقة مُخصصة لفندقك، علامتك، وملف ضيوفك. بدون أي التزام.">A 30-minute live walkthrough tailored to your property, brand, and guest profile. No commitment required.</p>
         <div class="demo-perks">
-          <span data-en="30-minute walkthrough" data-ar="جلسة 30 دقيقة">30-minute walkthrough</span>
+          <span data-en="30-minute live walkthrough" data-ar="جلسة حية 30 دقيقة">30-minute live walkthrough</span>
           <span data-en="Tailored to your property" data-ar="مخصصة لفندقك">Tailored to your property</span>
-          <span data-en="No commitment" data-ar="بدون التزام">No commitment</span>
+          <span data-en="No commitment required" data-ar="بدون أي التزام">No commitment required</span>
+          <span data-en="Response within 24 hours" data-ar="رد خلال 24 ساعة">Response within 24 hours</span>
         </div>
       </div>
 
@@ -1387,7 +1571,7 @@
         <div class="form-success" id="formSuccess">
           <div class="form-success-icon">✦</div>
           <h3 class="font-display" data-en="Request received." data-ar="تم استلام طلبك.">Request received.</h3>
-          <p data-en="Thank you for your interest in Blue. Our hospitality team will reach out within 24 hours to schedule your demo." data-ar="شكراً لاهتمامك بـ Blue. سيتواصل معك فريقنا خلال 24 ساعة لتحديد موعد العرض.">Thank you for your interest in Blue. Our hospitality team will reach out within 24 hours to schedule your demo.</p>
+          <p data-en="Thank you for your interest in Blue. Our hospitality team will reach out within 24 hours to schedule your personalized demo." data-ar="شكراً لاهتمامك بـ Blue. سيتواصل معك فريقنا خلال 24 ساعة لتحديد موعد العرض المخصص لك.">Thank you for your interest in Blue. Our hospitality team will reach out within 24 hours to schedule your personalized demo.</p>
         </div>
 
         <form id="demoForm" action="https://formspree.io/f/xdavaype" method="POST">
@@ -1397,15 +1581,15 @@
               <input type="text" id="name" name="name" placeholder="Jane Smith" required />
             </div>
             <div class="form-group">
-              <label for="hotel" data-en="Hotel / Property Name *" data-ar="اسم الفندق *">Hotel / Property Name *</label>
-              <input type="text" id="hotel" name="hotel" placeholder="Grand Palace Hotel" required />
+              <label for="hotel" data-en="Hotel / Property Name *" data-ar="اسم الفندق / العقار *">Hotel / Property Name *</label>
+              <input type="text" id="hotel" name="hotel" placeholder="Grand Palace Resort" required />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="role" data-en="Your Role *" data-ar="وظيفتك *">Your Role *</label>
               <select id="role" name="role" required>
-                <option value="" disabled selected data-en="Select role" data-ar="اختر الوظيفة">Select role</option>
+                <option value="" disabled selected data-en="Select your role" data-ar="اختر وظيفتك">Select your role</option>
                 <option data-en="Hotel Owner" data-ar="مالك فندق">Hotel Owner</option>
                 <option data-en="General Manager" data-ar="مدير عام">General Manager</option>
                 <option data-en="Operations Manager" data-ar="مدير عمليات">Operations Manager</option>
@@ -1429,7 +1613,7 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="email" data-en="Work Email *" data-ar="البريد الإلكتروني *">Work Email *</label>
+              <label for="email" data-en="Work Email *" data-ar="البريد الإلكتروني المهني *">Work Email *</label>
               <input type="email" id="email" name="email" placeholder="you@hotel.com" required style="direction:ltr;" />
             </div>
             <div class="form-group">
@@ -1439,10 +1623,10 @@
           </div>
           <div class="form-group">
             <label for="message" data-en="What would you like to see? (Optional)" data-ar="ما الذي تود رؤيته؟ (اختياري)">What would you like to see? (Optional)</label>
-            <textarea id="message" name="message" placeholder="Tell us about your property, your guest mix, or specific operational challenges..."></textarea>
+            <textarea id="message" name="message" placeholder="Tell us about your property, your guest mix, or specific operational challenges you'd like Blue to solve..."></textarea>
           </div>
-          <button type="submit" class="btn-primary form-submit" data-en="Book My Demo" data-ar="احجز عرضي الآن">Book My Demo</button>
-          <p class="form-note" data-en="Your data stays private. Used only to contact you about Blue." data-ar="بياناتك خاصة. تُستخدم فقط للتواصل معك بشأن Blue.">Your data stays private. Used only to contact you about Blue.</p>
+          <button type="submit" class="btn-primary form-submit" data-en="Request My Personalized Demo →" data-ar="احجز عرضي المخصص الآن ←">Request My Personalized Demo →</button>
+          <p class="form-note" data-en="Your information stays private. Used only to schedule your Blue demo." data-ar="معلوماتك تبقى خاصة. تُستخدم فقط لتحديد موعد عرض Blue.">Your information stays private. Used only to schedule your Blue demo.</p>
         </form>
       </div>
     </div>
@@ -1455,10 +1639,10 @@
       <h2 class="section-title font-display" style="font-size:clamp(1.6rem, 3.5vw, 2.2rem);">
         <span data-en="Prefer a direct conversation?" data-ar="تفضل التواصل المباشر؟">Prefer a direct conversation?</span>
       </h2>
-      <p class="section-lede" style="margin: 1rem auto 0;" data-en="Reach our hospitality team directly — by email, phone, or WhatsApp." data-ar="تواصل مع فريق الضيافة مباشرة — عبر البريد، الهاتف، أو واتساب.">Reach our hospitality team directly — by email, phone, or WhatsApp.</p>
+      <p class="section-lede" style="margin:1rem auto 0;" data-en="Reach our hospitality team directly — by email, phone, or WhatsApp. We respond fast." data-ar="تواصل مع فريق الضيافة مباشرة — عبر البريد، الهاتف، أو واتساب. نحن نرد بسرعة.">Reach our hospitality team directly — by email, phone, or WhatsApp. We respond fast.</p>
       <div class="contact-bar">
         <a href="https://wa.me/201065441573?text=Hello%20Blue%2C%20I%27d%20like%20to%20learn%20more%20about%20the%20platform." class="contact-card whatsapp" target="_blank" rel="noopener">
-          <div class="contact-icon" style="color: var(--whatsapp);">
+          <div class="contact-icon" style="color:var(--whatsapp);">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2zm0 1.67c2.21 0 4.28.86 5.84 2.43a8.2 8.2 0 0 1 2.42 5.84c0 4.54-3.7 8.24-8.25 8.24a8.19 8.19 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.15 8.15 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.24-8.25zm-4.7 4.42c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03 0 1.2.88 2.36 1 2.52.12.16 1.71 2.74 4.22 3.73 2.09.82 2.52.66 2.97.62.45-.04 1.45-.59 1.66-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.45-1.35-1.69-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42l-.47-.01z"/></svg>
           </div>
           <span class="contact-label" data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
@@ -1581,7 +1765,7 @@
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
     /* ── LANGUAGE TOGGLE ── */
@@ -1633,6 +1817,7 @@
         }
       });
     }
+
   </script>
 </body>
 </html>
